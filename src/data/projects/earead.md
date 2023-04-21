@@ -1,0 +1,18 @@
+---
+title: EA Read
+stack: C#, Unity
+link: ea-read
+order: 2
+---
+
+**test** This is loreum ipsum my own version done.
+
+### EA READ
+
+For my Fall 2015 semester, I worked with a team of 5 classmates on an EA semester project. Our goal was to explore how voice recognition could be used to encourage children to read on the Connected TV platform. The Connected TV platform allows mobile devices to communicate with computer/tv applications through JSON messages using a Node.js server.
+For this project, I:
+1.	Wrote a Unity MVC framework to help convert and add existing childrens books into our project
+2.	Implemented karaoke highlighting of words by parsing a spreadsheet of dialogue times and manipulating the word text when read
+3.	Animated and brought storybooks to life through Unity’s animation system and key framing
+4.	Simplified the animation process by making relevant functions more modular so that they could be called during the key framing process
+5.	Programmed gameplay logic for communicating and sending messages between the mobile controller and the Unity application

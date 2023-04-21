@@ -8,9 +8,8 @@ export default function Home() {
     <Layout>
       <section className={styles.header}>
         <div>
-          <h2>Program</h2>
-          <h3>Program and Play</h3>
-          <p>Software engineer & Streamer</p>
+          <h3>Programmer & Developer</h3>
+          <p>"Make something wonderful and put it out there" -Steve Jobs</p>
           <Link className={styles.btn} to="/projects">
             My Portfolio Projects
           </Link>
