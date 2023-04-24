@@ -1,12 +1,16 @@
 import * as React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import * as styles from "../styles/home.module.css";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Hero from "../components/Hero";
 
-export default function Home() {
+export default function Home({ data }) {
+  // const bannerImg = getImage(data.file.childImageSharp.gatsbyImageData);
   return (
     <Layout>
-      <section className={styles.header}>
+      <Hero data={data.file.childImageSharp}/>
+      {/* <section className={styles.header}>
         <div>
           <h3>Programmer & Developer</h3>
           <p>"Make something wonderful and put it out there" -Steve Jobs</p>
@@ -14,12 +18,21 @@ export default function Home() {
             My Portfolio Projects
           </Link>
         </div>
-        <img
-          src="/banner2.jpg"
-          alt="site banner"
-          style={{ maxWidth: "100%" }}
-        />
-      </section>
+      </section> */}
     </Layout>
   );
 }
+
+export const query = graphql`
+  query Banner {
+    file(relativePath: { eq: "images/selfportrait.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
+      }
+    }
+  }
+`;

@@ -2,7 +2,7 @@
 title: An Ant's Life
 stack: C#, Unity
 link: an-ants-life
-order:  
+order: 1
 ---
 
 **test** This is loreum ipsum my own version done.

@@ -1,9 +1,11 @@
 import React from "react";
-import Navbar from "./navbar";
-import "../styles/global.css";
+import Navbar from "./Navbar";
+import { GlobalStyle } from "../styles/globalStyles";
+
 export default function Layout({ children }) {
   return (
-    <div className="layout">
+    <div className="Layout">
+      <GlobalStyle />
       <Navbar />
       <div className="content">{children}</div>
       <footer>

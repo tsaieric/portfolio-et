@@ -1,4 +1,4 @@
-.header {
+/* .header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
@@ -11,7 +11,7 @@
     font-size: 3em;
     font-weight: 400;
     margin-bottom: 20px;
-}
+} */
 .btn {
     display: inline-block;
     background: black;
