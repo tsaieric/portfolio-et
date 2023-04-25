@@ -1,7 +1,4 @@
-// import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-// import "@fontsource/roboto"; // Defaults to weight 400.
-import "@fontsource/roboto/500.css"; 
-
+import "@fontsource/roboto"; // Defaults to weight 400.
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 /* body {
   background: radial-gradient(

@@ -18,20 +18,22 @@ export default function Navbar() {
     }
   `);
 
-  const  title  = data.site.siteMetadata.title;
+  const title = data.site.siteMetadata.title;
   const menuData = data.site.siteMetadata.menuData;
 
   return (
     <Nav>
-      <NavLink to="/">{title}</NavLink>
-      <Bars />
-      <NavMenu>
-        {menuData.map((item, idx) => (
-          <NavLink to={item.link} key={idx}>
-            {item.title}
-          </NavLink>
-        ))}
-      </NavMenu>
+      <NavbarContainer>
+        <NavLogo to="/">{title}</NavLogo>
+          <Bars />
+        <NavMenu>
+          {menuData.map((item, idx) => (
+            <NavLink to={item.link} key={idx}>
+              {item.title}
+            </NavLink>
+          ))}
+        </NavMenu>
+      </NavbarContainer>
     </Nav>
   );
 }
@@ -42,8 +44,37 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw-1300px) / 2);
-  z-index: 100;
+  z-index: 10;
   position: relative;
+  font-size: 1.5rem;
+  @media screen and (max-width: 960px) {
+    transition: 0.8s all ease;
+  }
+`;
+
+const NavbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 24px;
+  @media screen and (max-width: 768px) {
+    padding: 0 12px;
+  }
+  /* max-width: 1100px; */
+`;
+
+const NavLogo = styled(Link)`
+  color: lightgoldenrodyellow;
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  /* margin-left: 20px; */
+  font-weight: 500;
+  text-decoration: none;
 `;
 
 const NavLink = styled(Link)`
@@ -60,11 +91,24 @@ const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: 20px;
-
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
+
+// const MobileIcon = styled.div`
+//   display: none;
+
+//   @media screen and (max-width: 768px) {
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     transform: translate(-100%, 60%);
+//     font-size: 1.8rem;
+//     cursor: pointer;
+//   }
+// `
 
 const Bars = styled(FaBars)`
   display: none;
