@@ -25,9 +25,7 @@ export default function Navbar({ toggle }) {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">{title}</NavLogo>
-        <MobileIcon onClick = {toggle}>
-          <Bars />
-        </MobileIcon>
+        <Bars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, idx) => (
             <NavLink to={item.link} key={idx}>
@@ -113,30 +111,16 @@ const NavBtn = styled.div`
   }
 `;
 
-const MobileIcon = styled.div`
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-`;
-
 const Bars = styled(FaBars)`
   display: none;
-  color: #fff;
+  color: whitesmoke;
 
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
+    transform: translate(-100%, 112%);
     font-size: 1.8rem;
     cursor: pointer;
   }

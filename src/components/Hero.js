@@ -73,7 +73,6 @@ const TextWrapper = styled.div`
   padding-bottom: 30px;
   @media screen and (max-width: 768px) {
     padding-top: 20px;
-    max-width: 340px;
   }
 `;
 const TopLine = styled.p`
@@ -92,7 +91,7 @@ const Heading = styled.h1`
   font-weight: 600;
   color: lightgoldenrodyellow;
   @media screen and (max-width: 480px) {
-    font-size: 24px;
+    font-size: 28px;
   }
 `;
 const Subtitle = styled.p`
@@ -104,7 +103,7 @@ const Subtitle = styled.p`
   color: #d2d2fa;
 
   @media screen and (max-width: 480px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 `;
 const Paragraph = styled.p`
@@ -114,7 +113,7 @@ const Paragraph = styled.p`
   font-weight: 300;
   color: whitesmoke;
   @media screen and (max-width: 480px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 
