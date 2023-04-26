@@ -13,7 +13,10 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^4.5.14",
+    "@fontsource/open-sans": "^4.5.14",
     "@fontsource/roboto": "^4.5.8",
+    "@fontsource/roboto-mono": "^4.5.10",
     "babel-plugin-styled-components": "^2.1.1",
     "gatsby": "^5.9.0",
     "gatsby-plugin-image": "^3.9.0",

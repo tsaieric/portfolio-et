@@ -64,9 +64,9 @@ const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 24px;
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 800px) {
     padding: 0 12px;
-  }
+  } */
   /* max-width: 1100px; */
 `;
 
@@ -96,7 +96,7 @@ const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -48px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -106,7 +106,7 @@ const NavBtn = styled.div`
   align-items: center;
   margin-right: 24px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -115,7 +115,7 @@ const Bars = styled(FaBars)`
   display: none;
   color: whitesmoke;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: block;
     position: absolute;
     top: 0;

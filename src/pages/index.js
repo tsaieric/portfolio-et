@@ -14,7 +14,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query Banner {
-    file(relativePath: { eq: "images/cloud2.jpg" }) {
+    file(relativePath: { eq: "images/cloud1.jpg" }) {
       childImageSharp {
         gatsbyImageData(
           layout: FULL_WIDTH

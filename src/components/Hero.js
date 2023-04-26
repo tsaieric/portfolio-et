@@ -31,9 +31,7 @@ export default function Hero({ data }) {
             </TextWrapper>
           </Column1>
           <Column2>
-            <ImgWrap>
               <HeroGatsbyImage image={portraitImg} alt="Portrait" />
-            </ImgWrap>
           </Column2>
         </HeroItems>
       </HeroWrapper>
@@ -91,7 +89,7 @@ const Heading = styled.h1`
   font-weight: 600;
   color: lightgoldenrodyellow;
   @media screen and (max-width: 480px) {
-    font-size: 28px;
+    font-size: 33px;
   }
 `;
 const Subtitle = styled.p`
@@ -103,7 +101,7 @@ const Subtitle = styled.p`
   color: #d2d2fa;
 
   @media screen and (max-width: 480px) {
-    font-size: 18px;
+    font-size: 20px;
   }
 `;
 const Paragraph = styled.p`
@@ -113,20 +111,20 @@ const Paragraph = styled.p`
   font-weight: 300;
   color: whitesmoke;
   @media screen and (max-width: 480px) {
-    font-size: 16px;
+    font-size: 17px;
   }
 `;
 
-const ImgWrap = styled.div`
-  max-width: 420px;
-  height: 100%;
-`;
 const HeroGatsbyImage = styled(GatsbyImage)`
+  position:relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  max-width: 420px;
   width: 100%;
   height: auto;
   margin: 0 0 10px 0;
   padding-right: 0;
-  border-radius: 60px;
+  border-radius: 100px;
   opacity: 0.95;
 `;
 
@@ -143,7 +141,7 @@ const HeroBg = styled.div`
 
 const VideoBg = styled.video`
   width: 100%;
-  height: 200%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   /* opacity: 0.38; */
@@ -158,14 +156,9 @@ const HeroWrapper = styled.div`
   max-height: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: 0rem calc((100vw-1300px) / 2);
-  /* padding: 0 24px; */
+  /* padding: 0rem calc((100vw-1300px) / 2); */
+  padding: 0 12px;
   justify-content: center;
-
-  /* z-index: 3;
-  height: calc(100vh - 80px);
-  padding: 0rem calc((100vw-1300px) / 2);
-  max-height: 100%; */
 `;
 
 const HeroItems = styled.div`

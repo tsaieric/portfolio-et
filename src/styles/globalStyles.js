@@ -1,13 +1,13 @@
-import "@fontsource/roboto"; // Defaults to weight 400.
+import "@fontsource/montserrat"; // Defaults to weight 400.
+import "@fontsource/open-sans"; // Defaults to weight 400.
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat';
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
   }
 
 body {
