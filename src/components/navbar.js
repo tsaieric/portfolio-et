@@ -2,9 +2,9 @@ import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
-import { Button } from "./Button";
+import { Button } from "../styles/Button";
 
-export default function Navbar() {
+export default function Navbar({ toggle }) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -18,7 +18,6 @@ export default function Navbar() {
       }
     }
   `);
-
   const title = data.site.siteMetadata.title;
   const menuData = data.site.siteMetadata.menuData;
 
@@ -26,7 +25,9 @@ export default function Navbar() {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">{title}</NavLogo>
-        <Bars />
+        <MobileIcon onClick = {toggle}>
+          <Bars />
+        </MobileIcon>
         <NavMenu>
           {menuData.map((item, idx) => (
             <NavLink to={item.link} key={idx}>
@@ -112,19 +113,19 @@ const NavBtn = styled.div`
   }
 `;
 
-// const MobileIcon = styled.div`
-//   display: none;
+const MobileIcon = styled.div`
+  display: none;
 
-//   @media screen and (max-width: 768px) {
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     transform: translate(-100%, 60%);
-//     font-size: 1.8rem;
-//     cursor: pointer;
-//   }
-// `
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
 
 const Bars = styled(FaBars)`
   display: none;

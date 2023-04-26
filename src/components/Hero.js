@@ -15,7 +15,7 @@ export default function Hero({ data }) {
         <HeroItems imgStart={false}>
           <Column1>
             <TextWrapper>
-              <TopLine>Welcome, I'm Eric Tsai</TopLine>
+              <TopLine>Hi, I'm Eric Tsai</TopLine>
               <Heading>A Software Engineer</Heading>
               <Subtitle>
                 Dedicated to creating unforgettable experiences through
@@ -24,9 +24,9 @@ export default function Hero({ data }) {
               <Paragraph>
                 I believe in lifelong learning and growth. With 8+ years of
                 experience at Google Stadia/YouTube, Alexa Auto, and more, I'm
-                always improving my programming, game development and system
-                design skills. I enjoy using my expertise & passion to make
-                extraordinary experiences for everyone.
+                always improving my programming, game development and design
+                skills. I love using my expertise & passion to make unique & fun
+                experiences.
               </Paragraph>
             </TextWrapper>
           </Column1>
@@ -73,10 +73,11 @@ const TextWrapper = styled.div`
   padding-bottom: 30px;
   @media screen and (max-width: 768px) {
     padding-top: 20px;
+    max-width: 340px;
   }
 `;
 const TopLine = styled.p`
-  color: white;
+  color: #d2d2fa;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -99,8 +100,9 @@ const Subtitle = styled.p`
   margin-bottom: 20px;
   font-size: 22px;
   line-height: 1.2;
-  font-weight: 600;
-  color: whitesmoke;
+  font-weight: 400;
+  color: #d2d2fa;
+
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
@@ -110,7 +112,7 @@ const Paragraph = styled.p`
   font-size: 18px;
   line-height: 1.2;
   font-weight: 300;
-  color: lightgray;
+  color: whitesmoke;
   @media screen and (max-width: 480px) {
     font-size: 14px;
   }
@@ -138,22 +140,6 @@ const HeroBg = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-
-  /* :before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.6) 100%
-      ),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-  }  */
 `;
 
 const VideoBg = styled.video`
@@ -193,31 +179,5 @@ const HeroItems = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
-    /* align-content: center; */
   }
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  text-align: left;
-  height: 100vh;
-  max-height: 100%;
-  padding: 0;
-  color: white;
-  line-height: 1.1; */
 `;
-
-// const HeroH1 = styled.h1`
-//   font-size: clamp(1.5rem, 6vw, 4rem);
-//   margin-bottom: 1.5rem;
-//   letter-spacing: 3px;
-//   font-weight: bold;
-//   padding: 0 1rem;
-// `;
-
-// const HeroP = styled.p`
-//   font-size: clamp(1rem, 3vw, 3rem);
-//   margin-bottom: 2rem;
-//   font-weight: 400;
-// `;
