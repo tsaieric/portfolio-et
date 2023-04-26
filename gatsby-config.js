@@ -41,6 +41,7 @@ module.exports = {
       { title: "About", link: "/about" },
       { title: "Projects", link: "/projects" },
       { title: "Career", link: "/career" },
+      { title: "Contact", link: "/contact" },
     ],
   },
 };
