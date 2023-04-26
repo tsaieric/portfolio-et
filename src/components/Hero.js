@@ -9,31 +9,25 @@ export default function Hero({ data }) {
   return (
     <HeroContainer>
       <HeroBg>
-        <VideoBg
-          src={Video}
-          type="video/mp4"
-          autoPlay
-          loop
-          muted
-          playsInLine
-        />
+        <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine />
       </HeroBg>
       <HeroWrapper>
         <HeroItems imgStart={false}>
           <Column1>
             <TextWrapper>
-              {/* <TopLine>ABOUT ME</TopLine> */}
-              <Heading>Software Engineer</Heading>
+              <TopLine>Welcome, I'm Eric Tsai</TopLine>
+              <Heading>A Software Engineer</Heading>
               <Subtitle>
-                Experienced in Back-end Engineering, Game Development & System
-                Design from Google/Youtube, Amazon, CMU, etc.
+                Dedicated to creating unforgettable experiences through
+                interactive media and games.
               </Subtitle>
-              <Subtitle>
-                Experienced software engineer who likes messing with games and
-                interactive media. I have experience in back-end engineering,
-                game development & system design from Google/Youtube, Amazon,
-                CMU, etc.
-              </Subtitle>
+              <Paragraph>
+                I believe in lifelong learning and growth. With 8+ years of
+                experience at Google Stadia/YouTube, Alexa Auto, and more, I'm
+                always improving my programming, game development and system
+                design skills. I enjoy using my expertise & passion to make
+                extraordinary experiences for everyone.
+              </Paragraph>
             </TextWrapper>
           </Column1>
           <Column2>
@@ -91,25 +85,48 @@ const TopLine = styled.p`
   margin-bottom: 16px;
 `;
 const Heading = styled.h1`
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
   color: lightgoldenrodyellow;
   @media screen and (max-width: 480px) {
-    font-size: 22px;
+    font-size: 24px;
   }
 `;
 const Subtitle = styled.p`
-  max-width: 440px;
-  margin-bottom: 25px;
+  max-width: 480px;
+  margin-bottom: 20px;
   font-size: 22px;
-  line-height: 24px;
+  line-height: 1.2;
+  font-weight: 600;
   color: whitesmoke;
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
+const Paragraph = styled.p`
+  max-width: 480px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 300;
+  color: lightgray;
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
+`;
+
 const ImgWrap = styled.div`
-  max-width: 555px;
+  max-width: 420px;
   height: 100%;
+`;
+const HeroGatsbyImage = styled(GatsbyImage)`
+  width: 100%;
+  height: auto;
+  margin: 0 0 10px 0;
+  padding-right: 0;
+  border-radius: 60px;
+  opacity: 0.95;
 `;
 
 const HeroBg = styled.div`
@@ -141,25 +158,16 @@ const HeroBg = styled.div`
 
 const VideoBg = styled.video`
   width: 100%;
-  height: 100%;
+  height: 200%;
   -o-object-fit: cover;
   object-fit: cover;
   /* opacity: 0.38; */
 `;
 
-const HeroGatsbyImage = styled(GatsbyImage)`
-  width: 100%;
-  height: auto;
-  margin: 0 0 10px 0;
-  padding-right: 0;
-  border-radius: 60px;
-  opacity: 0.95;
-`;
-
 const HeroWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   width: 100%;
   /* max-width: 1100px; */
   max-height: 100%;

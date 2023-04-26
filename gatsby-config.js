@@ -34,7 +34,7 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: "Eric Tsai",
+    title: "ET",
     description: "My portfolio",
     copyright: "Copyright 2023 Eric Tsai",
     menuData: [

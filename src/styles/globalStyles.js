@@ -7,17 +7,20 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-/* body {
+
+  }
+
+body {
   background: radial-gradient(
     at top left,
-    rgb(116, 116, 116) 0%,
+    rgb(50, 50, 50) 0%,
     rgb(0, 0, 0) 100%
   );
   background-repeat: no-repeat;
 }
+
 html,
 body {
   min-height: 100%;
-} */
+} 
 `;
