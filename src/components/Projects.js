@@ -44,9 +44,9 @@ export const Projects = () => {
                 <TitleWrap>
                   <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
                 </TitleWrap>
-                <StackWrap>
+                {/* <StackWrap>
                   <ProjectStack>{"Skills: "+project.frontmatter.stack}</ProjectStack>
-                </StackWrap>
+                </StackWrap> */}
               </ProjectInfo>
             </Link>
           </ProjectCard>
@@ -60,8 +60,12 @@ const ProjectsContainer = styled.div`
   margin-top: 80px;
   min-height: 100vh;
   padding: 5rem calc((100vw-1300px) / 2);
-  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
+
 const ProjectsHeading = styled.div`
   color: lightgoldenrodyellow;
   font-weight: 700;
@@ -72,7 +76,7 @@ const ProjectsHeading = styled.div`
 
 const ProjectsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;//repeat(4, 1fr);
   grid-gap: 20px;
   justify-items: center;
   padding: 0 clamp(0.7rem, 5vw, 6rem);
@@ -84,12 +88,16 @@ const ProjectsWrapper = styled.div`
   @media screen and (max-width: 868px) {
     grid-template-columns: 1fr;
   }
+
+  max-width: 1300px;
+  max-height: 100%;
+  margin: 0 auto;
 `;
 
 const ProjectCard = styled.div`
   line-height: 2;
   width: 100%;
-  height: 500px;
+  height: 300px; //500px;
   position: relative;
   transition: 0.2 ease;
   @media screen and (max-width: 1200px) {
@@ -122,7 +130,7 @@ const ProjectInfo = styled.div`
 
 const TitleWrap = styled.div`
   position: absolute;
-  top: 20%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
@@ -134,14 +142,15 @@ const StackWrap = styled.div`
 `;
 
 const ProjectTitle = styled.div`
-  font-weight: 700;
-  font-size: clamp(1rem, 5vw, 2.2rem);
-  line-height: clamp(1rem, 5vw, 2.2rem);
+  font-weight: 400;
+  font-size: clamp(1rem, 5vw, 2rem);
+  line-height: clamp(1rem, 5vw, 2rem);
   text-align: center;
   color: whitesmoke;
   /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
-  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black, -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
-
+  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black,
+    -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black,
+    0.08em 0.08em black;
 `;
 
 const ProjectStack = styled.div`
@@ -151,5 +160,7 @@ const ProjectStack = styled.div`
   text-align: center;
   color: whitesmoke;
   /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
-  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black, -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
+  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black,
+    -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black,
+    0.08em 0.08em black;
 `;
