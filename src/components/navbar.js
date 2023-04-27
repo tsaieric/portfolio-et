@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
@@ -6,6 +6,20 @@ import { Button } from "../styles/Button";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function Navbar({ toggle }) {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
   const [isHover, setIsHover] = useState(false);
   const data = useStaticQuery(graphql`
     query {
@@ -23,7 +37,9 @@ export default function Navbar({ toggle }) {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      altLogoImg: file(relativePath: { eq: "images/logo/altLogoSquare180.png" }) {
+      altLogoImg: file(
+        relativePath: { eq: "images/logo/altLogoSquare180.png" }
+      ) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
@@ -37,7 +53,7 @@ export default function Navbar({ toggle }) {
   const altLogoImg = getImage(data.altLogoImg.childImageSharp.gatsbyImageData);
 
   return (
-    <Nav>
+    <Nav scrollNav={scrollNav}>
       <NavbarContainer>
         <NavLogo to="/">
           <div
@@ -70,7 +86,7 @@ export default function Navbar({ toggle }) {
 }
 
 const Nav = styled.nav`
-  background: black;
+  background: ${({ scrollNav }) => (scrollNav ? "black" : "transparent")};
   height: 80px;
   display: flex;
   justify-content: space-between;
