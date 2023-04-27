@@ -1,5 +1,5 @@
 ---
-title: A* Pathfinding & Autonomous Movement
+title: Autonomous A* Pathfinding
 stack: C#, Unity
 link: game-ai
 order: 6

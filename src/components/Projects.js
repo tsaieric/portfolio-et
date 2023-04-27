@@ -13,6 +13,7 @@ export const Projects = () => {
         nodes {
           frontmatter {
             link
+            stack
             title
             img {
               childImageSharp {
@@ -40,10 +41,12 @@ export const Projects = () => {
                 alt={project.frontmatter.title}
               />
               <ProjectInfo>
-                <TextWrap>
-                  {/* <ProjectStack>{project.frontmatter.stack}</ProjectStack> */}
+                <TitleWrap>
                   <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
-                </TextWrap>
+                </TitleWrap>
+                <StackWrap>
+                  <ProjectStack>{"Skills: "+project.frontmatter.stack}</ProjectStack>
+                </StackWrap>
               </ProjectInfo>
             </Link>
           </ProjectCard>
@@ -54,7 +57,7 @@ export const Projects = () => {
 };
 
 const ProjectsContainer = styled.div`
-  margin-top:80px;
+  margin-top: 80px;
   min-height: 100vh;
   padding: 5rem calc((100vw-1300px) / 2);
   color: #fff;
@@ -117,7 +120,13 @@ const ProjectInfo = styled.div`
   }
 `;
 
-const TextWrap = styled.div`
+const TitleWrap = styled.div`
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+const StackWrap = styled.div`
   position: absolute;
   top: 80%;
   left: 50%;
@@ -126,9 +135,21 @@ const TextWrap = styled.div`
 
 const ProjectTitle = styled.div`
   font-weight: 700;
-  font-size: clamp(1rem, 5vw, 2rem);
-  line-height: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(1rem, 5vw, 2.2rem);
+  line-height: clamp(1rem, 5vw, 2.2rem);
   text-align: center;
   color: whitesmoke;
-  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
+  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black, -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
+
+`;
+
+const ProjectStack = styled.div`
+  font-weight: 700;
+  font-size: clamp(0.6rem, 5vw, 1.5rem);
+  line-height: clamp(0.6rem, 5vw, 1.5rem);
+  text-align: center;
+  color: whitesmoke;
+  /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
+  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black, -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
 `;
