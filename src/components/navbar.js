@@ -44,23 +44,26 @@ export default function Navbar({ toggle }) {
 }
 
 const Nav = styled.nav`
-  background: transparent;
+  background: black;
   height: 80px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 10;
-  position: relative;
   font-size: 1.5rem;
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
+  //make navbar sticky
+  position: sticky; //relative if don't want
+  position: -webkit-sticky; /* Safari */
+	top: 0;
 `;
 
 const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
   z-index: 1;
   width: 100%;
   padding: 0 24px;
@@ -120,7 +123,7 @@ const Bars = styled(FaBars)`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 112%);
+    transform: translate(-100%, 85%); //move nav bars icon up/down here
     font-size: 1.8rem;
     cursor: pointer;
   }
