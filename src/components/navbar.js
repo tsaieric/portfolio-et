@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import { Button } from "../styles/Button";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function Navbar({ toggle }) {
+  const [isHover, setIsHover] = useState(false);
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -16,15 +18,39 @@ export default function Navbar({ toggle }) {
           title
         }
       }
+      mainLogoImg: file(relativePath: { eq: "images/logo/logoSquare180.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
+      altLogoImg: file(relativePath: { eq: "images/logo/altLogoSquare180.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
     }
   `);
-  const title = data.site.siteMetadata.title;
   const menuData = data.site.siteMetadata.menuData;
+  const mainLogoImg = getImage(
+    data.mainLogoImg.childImageSharp.gatsbyImageData
+  );
+  const altLogoImg = getImage(data.altLogoImg.childImageSharp.gatsbyImageData);
 
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to="/">{title}</NavLogo>
+        <NavLogo to="/">
+          <div
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            {isHover ? (
+              <NavGatsbyImage image={altLogoImg} alt="ET" />
+            ) : (
+              <NavGatsbyImage image={mainLogoImg} alt="ET" />
+            )}
+          </div>
+        </NavLogo>
         <Bars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, idx) => (
@@ -57,7 +83,7 @@ const Nav = styled.nav`
   //make navbar sticky
   position: sticky; //relative if don't want
   position: -webkit-sticky; /* Safari */
-	top: 0;
+  top: 0;
 `;
 
 const NavbarContainer = styled.div`
@@ -71,6 +97,17 @@ const NavbarContainer = styled.div`
     padding: 0 12px;
   } */
   /* max-width: 1100px; */
+`;
+
+const NavGatsbyImage = styled(GatsbyImage)`
+  max-width: 50px;
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+  &:hover {
+    transform: translateY(-2px);
+    /* transform: all 0.2s ease-in-out; */
+  }
 `;
 
 const NavLogo = styled(Link)`
