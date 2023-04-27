@@ -3,6 +3,8 @@ title: An Ant's Life
 stack: C#, Unity
 link: an-ants-life
 order: 1
+img: "../../assets/images/featured/antsLifeVr.png"
+category: project
 ---
 
 **test** This is loreum ipsum my own version done.

@@ -3,6 +3,8 @@ title: EA Read
 stack: C#, Unity
 link: ea-read
 order: 2
+img: "../../assets/images/featured/readTabletTv.png"
+category: project
 ---
 
 **test** This is loreum ipsum my own version done.

@@ -1,5 +1,4 @@
 import "@fontsource/montserrat"; // Defaults to weight 400.
-import "@fontsource/open-sans"; // Defaults to weight 400.
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`

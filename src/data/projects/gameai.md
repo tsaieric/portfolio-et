@@ -3,7 +3,8 @@ title: A* Pathfinding & Autonomous Movement
 stack: C#, Unity
 link: game-ai
 order: 6
-img: "../../images/antslife.png"
+img: "../../assets/images/featured/aStarCover.png"
+category: project
 ---
 
 **test** This is loreum ipsum my own version done.

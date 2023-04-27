@@ -3,6 +3,8 @@ title: Simcoach Games
 stack: C#, Unity
 link: simcoach-games
 order: 3
+img: "../../assets/images/featured/simcoachReinforcersCover.webp"
+category: project
 ---
 
 **test** This is loreum ipsum my own version done.

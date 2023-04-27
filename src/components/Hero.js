@@ -31,7 +31,7 @@ export default function Hero({ data }) {
             </TextWrapper>
           </Column1>
           <Column2>
-              <HeroGatsbyImage image={portraitImg} alt="Portrait" />
+            <HeroGatsbyImage image={portraitImg} alt="Portrait" />
           </Column2>
         </HeroItems>
       </HeroWrapper>
@@ -55,24 +55,6 @@ const HeroContainer = styled.div`
   }
 `;
 
-const Column1 = styled.div`
-  /* margin-bottom: 15px; */
-  padding: 0 15px;
-  grid-area: col1;
-`;
-const Column2 = styled.div`
-  /* margin-bottom: 15px; */
-  padding: 0 15px;
-  grid-area: col2;
-`;
-const TextWrapper = styled.div`
-  max-width: 540px;
-  padding-top: 0;
-  padding-bottom: 30px;
-  @media screen and (max-width: 768px) {
-    padding-top: 20px;
-  }
-`;
 const TopLine = styled.p`
   color: #d2d2fa;
   font-size: 16px;
@@ -114,9 +96,27 @@ const Paragraph = styled.p`
     font-size: 17px;
   }
 `;
+const Column1 = styled.div`
+  /* margin-bottom: 15px; */
+  padding: 0 15px;
+  grid-area: col1;
+`;
+const Column2 = styled.div`
+  /* margin-bottom: 15px; */
+  padding: 0 15px;
+  grid-area: col2;
+`;
+const TextWrapper = styled.div`
+  max-width: 540px;
+  padding-top: 0;
+  padding-bottom: 30px;
+  @media screen and (max-width: 768px) {
+    padding-top: 20px;
+  }
+`;
 
 const HeroGatsbyImage = styled(GatsbyImage)`
-  position:relative;
+  position: relative;
   left: 50%;
   transform: translate(-50%, 0%);
   max-width: 420px;

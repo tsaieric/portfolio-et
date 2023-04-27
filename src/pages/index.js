@@ -2,18 +2,19 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Hero from "../components/Hero";
+import { Projects } from "../components/Projects";
 
 export default function Home({ data }) {
   return (
     <Layout>
       <Hero data={data.file.childImageSharp}/>
-      <Hero data={data.file.childImageSharp}/>
+      <Projects />
     </Layout>
   );
 }
 
 export const query = graphql`
-  query Banner {
+  query ProfilePhoto {
     file(relativePath: { eq: "images/cloud1.jpg" }) {
       childImageSharp {
         gatsbyImageData(
