@@ -21,5 +21,18 @@ body {
 html,
 body {
   min-height: 100%;
-} 
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
 `;

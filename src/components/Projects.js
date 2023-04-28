@@ -28,7 +28,7 @@ export const Projects = () => {
   `);
 
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id="projects">
       <ProjectsHeading>Projects</ProjectsHeading>
       <ProjectsWrapper>
         {projectsData.projects.nodes.map((project) => (
@@ -64,6 +64,7 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-margin-top: 80px;
 `;
 
 const ProjectsHeading = styled.div`
@@ -76,7 +77,7 @@ const ProjectsHeading = styled.div`
 
 const ProjectsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;//repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr; //repeat(4, 1fr);
   grid-gap: 20px;
   justify-items: center;
   padding: 0 clamp(0.7rem, 5vw, 6rem);

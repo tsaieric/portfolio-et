@@ -37,10 +37,10 @@ module.exports = {
     title: "ET",
     description: "My portfolio",
     copyright: "Copyright 2023 Eric Tsai",
-    logoImg: "./src/assets/images/logo/logo192x192.png", 
+    logoImg: "./src/assets/images/logo/logo192x192.png",
     menuData: [
-      { title: "About", link: "/about" },
-      { title: "Projects", link: "/projects" },
+      { title: "About", link: "/#about" },
+      { title: "Projects", link: "/#projects" },
       { title: "Career", link: "/career" },
       { title: "Contact", link: "/contact" },
     ],

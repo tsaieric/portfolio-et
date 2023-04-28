@@ -6,8 +6,8 @@ import { Button } from "../styles/Button";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function Navbar({ toggle }) {
+  //change navbar to black on scroll
   const [scrollNav, setScrollNav] = useState(false);
-
   const changeNav = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true);
@@ -15,12 +15,13 @@ export default function Navbar({ toggle }) {
       setScrollNav(false);
     }
   };
-
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
   }, []);
 
+  //change logo on hover
   const [isHover, setIsHover] = useState(false);
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -70,13 +71,19 @@ export default function Navbar({ toggle }) {
         <Bars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, idx) => (
-            <NavLink to={item.link} key={idx}>
+            <NavLink
+              to={item.link}
+              // href={item.link}
+              key={idx}
+              // onClick={() => navigate(item.link)}
+              activeClassName="active"
+            >
               {item.title}
             </NavLink>
           ))}
         </NavMenu>
         <NavBtn>
-          <Button primary="true" round="true" to="/projects">
+          <Button primary="true" round="true" to="/resume">
             Resume
           </Button>
         </NavBtn>
@@ -109,10 +116,6 @@ const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 24px;
-  /* @media screen and (max-width: 800px) {
-    padding: 0 12px;
-  } */
-  /* max-width: 1100px; */
 `;
 
 const NavGatsbyImage = styled(GatsbyImage)`
@@ -146,6 +149,10 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+
+  .active {
+    border-bottom: 3px solid #01bf71;
+  }
 `;
 
 const NavMenu = styled.div`

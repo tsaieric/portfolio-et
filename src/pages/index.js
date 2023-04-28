@@ -7,7 +7,7 @@ import { Projects } from "../components/Projects";
 export default function Home({ data }) {
   return (
     <Layout>
-      <Hero data={data.file.childImageSharp}/>
+      <Hero data={data.file.childImageSharp} />
       <Projects />
     </Layout>
   );

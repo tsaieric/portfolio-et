@@ -7,7 +7,7 @@ export default function Hero({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
 
   return (
-    <HeroContainer>
+    <HeroContainer id="about">
       <HeroBg>
         <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine />
       </HeroBg>
@@ -53,6 +53,7 @@ const HeroContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
+  scroll-margin-top: 80px;
 `;
 
 const TopLine = styled.p`
