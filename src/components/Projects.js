@@ -68,6 +68,7 @@ const ProjectsContainer = styled.div`
 `;
 
 const ProjectsHeading = styled.div`
+  margin-top: 30px;
   color: lightgoldenrodyellow;
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
@@ -109,10 +110,12 @@ const ProjectGatsbyImage = styled(GatsbyImage)`
   height: 100%;
   max-width: 100%;
   position: relative;
-  border-radius: 20px;
-  filter: brightness(80%);
+  border-radius: 30px;
+  filter: brightness(70%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-
+  border-style: solid;
+  border-color: lightgoldenrodyellow;
+  
   &:hover {
     filter: brightness(100%);
   }

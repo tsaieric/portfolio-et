@@ -22,6 +22,18 @@ export default function Navbar({ toggle }) {
   //change logo on hover
   const [isHover, setIsHover] = useState(false);
 
+
+  //custom active link style
+  // const [curLinkStyle, setCurLinkStyle] = useState({});
+  // const activeStyle = {
+  //   fontWeight: 'bold',
+  //   color: 'red',
+  //   textDecoration: 'underline',
+  // };
+  // const linkIsActive = ({ href, location }) => {
+  //   return href === location.pathname + location.hash ? setCurLinkStyle(activeStyle) : setCurLinkStyle({})
+  // };
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -71,12 +83,13 @@ export default function Navbar({ toggle }) {
         <Bars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, idx) => (
-            <NavLink
+            <NavLink 
               to={item.link}
               // href={item.link}
               key={idx}
               // onClick={() => navigate(item.link)}
-              activeClassName="active"
+              // getProps={linkIsActive}
+              // style={curLinkStyle}
             >
               {item.title}
             </NavLink>
@@ -150,10 +163,14 @@ const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
 
-  .active {
+  &.active {
     border-bottom: 3px solid #01bf71;
   }
 `;
+
+const NavLinkActive = styled(NavLink)`
+border-bottom: 3px solid #01bf71;
+`
 
 const NavMenu = styled.div`
   display: flex;

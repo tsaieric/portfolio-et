@@ -3,17 +3,17 @@ import styled from "styled-components";
 import Video from "../assets/videos/techVid1080p.mp4";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-export default function Hero({ data }) {
+export default function About({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
 
   return (
-    <HeroContainer id="hero">
-      <HeroBg>
+    <AboutContainer id="about">
+      {/* <AboutBg>
         <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInLine />
-      </HeroBg>
-      <HeroWrapper>
-        <HeroItems imgStart={false}>
-          {/* <Column1> */}
+      </AboutBg> */}
+      <AboutWrapper>
+        <AboutItems imgStart={false}>
+          <Column1>
             <TextWrapper>
               <TopLine>Hi, I'm Eric Tsai</TopLine>
               <Heading>A Software Engineer</Heading>
@@ -29,31 +29,31 @@ export default function Hero({ data }) {
                 experiences.
               </Paragraph>
             </TextWrapper>
-          {/* </Column1> */}
-          {/* <Column2>
-            <HeroGatsbyImage image={portraitImg} alt="Portrait" />
-          </Column2> */}
-        </HeroItems>
-      </HeroWrapper>
-    </HeroContainer>
+          </Column1>
+          <Column2>
+            <AboutGatsbyImage image={portraitImg} alt="Portrait" />
+          </Column2>
+        </AboutItems>
+      </AboutWrapper>
+    </AboutContainer>
   );
 }
 
-const HeroContainer = styled.div`
+const AboutContainer = styled.div`
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
   position: relative;
-  margin-top: -80px;
+  margin-top: 0px;//-80px;
   /* color: white; */
 
   //added as part of infowrapper attempt
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
-  scroll-margin-top: 80px;
+  /* scroll-margin-top: 80px; */
 `;
 
 const TopLine = styled.p`
@@ -116,7 +116,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const HeroGatsbyImage = styled(GatsbyImage)`
+const AboutGatsbyImage = styled(GatsbyImage)`
   position: relative;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -125,11 +125,11 @@ const HeroGatsbyImage = styled(GatsbyImage)`
   height: auto;
   margin: 0 0 10px 0;
   padding-right: 0;
-  border-radius: 100px;
+  border-radius: 80px;
   opacity: 0.95;
 `;
 
-const HeroBg = styled.div`
+const AboutBg = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -148,7 +148,7 @@ const VideoBg = styled.video`
   /* opacity: 0.38; */
 `;
 
-const HeroWrapper = styled.div`
+const AboutWrapper = styled.div`
   display: grid;
   z-index: 1;
   height: calc(100vh - 80px);
@@ -162,7 +162,7 @@ const HeroWrapper = styled.div`
   justify-content: center;
 `;
 
-const HeroItems = styled.div`
+const AboutItems = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;

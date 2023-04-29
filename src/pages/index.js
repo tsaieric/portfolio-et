@@ -3,11 +3,13 @@ import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import Hero from "../components/Hero";
 import { Projects } from "../components/Projects";
+import About from "../components/About";
 
 export default function Home({ data }) {
   return (
     <Layout>
       <Hero data={data.file.childImageSharp} />
+      <About data={data.file.childImageSharp} />
       <Projects />
     </Layout>
   );
