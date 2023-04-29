@@ -25,6 +25,12 @@ body {
 
 html {
 	scroll-behavior: smooth;
+
+  //prevent sidebar from impacting navbar. 
+  //Calculates scrollbar width and -right 
+  //margin that amount. If no bar, then it's 0
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 /**
