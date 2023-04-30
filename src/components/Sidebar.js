@@ -33,7 +33,7 @@ export default function Sidebar({ isOpen, toggle }) {
           ))}
         </SidebarMenu>
         <SidebarBtn>
-          <Button primary="true" round="true" to="/projects">
+          <Button primary="true" round="true" to="/resume">
             Resume
           </Button>
         </SidebarBtn>
