@@ -10,7 +10,6 @@ export default function Hero({ data }) {
   return (
     <HeroContainer id="hero">
       <HeroBg>
-        {/* <HeroGatsbyImage image={portraitImg} alt="Portrait" /> */}
         <VideoBg autoPlay loop muted playsInLine>
           <source src={VideoMp4} type="video/mp4" />
           <source src={VideoWebm} type="video/webm" />
@@ -18,26 +17,16 @@ export default function Hero({ data }) {
       </HeroBg>
       <HeroWrapper>
         <HeroItems imgStart={false}>
-          {/* <Column1> */}
           <TextWrapper>
             <TopLine>Hi, I'm Eric Tsai</TopLine>
-            <Heading>A Software Engineer</Heading>
+            <Heading>
+              A Software Engineer
+            </Heading>
             <Subtitle>
               Dedicated to creating unforgettable experiences through
               interactive media and games
             </Subtitle>
-            {/* <Paragraph>
-                I believe in lifelong learning and growth. With 8+ years of
-                experience at Google Stadia/YouTube, Alexa Auto, and more, I'm
-                always improving my programming, game development and design
-                skills. I love using my expertise & passion to make unique & fun
-                experiences.
-              </Paragraph> */}
           </TextWrapper>
-          {/* </Column1> */}
-          {/* <Column2>
-            <HeroGatsbyImage image={portraitImg} alt="Portrait" />
-          </Column2> */}
         </HeroItems>
       </HeroWrapper>
     </HeroContainer>
@@ -59,6 +48,10 @@ const HeroContainer = styled.div`
     padding: 100px 0;
   }
   scroll-margin-top: 80px;
+`;
+
+const HighlightWords = styled.text`
+  color: ${({ theme: { colors } }) => colors.secondary};
 `;
 
 const TopLine = styled.p`

@@ -22,7 +22,6 @@ export default function Navbar({ toggle }) {
   //change logo on hover
   const [isHover, setIsHover] = useState(false);
 
-
   //custom active link style
   // const [curLinkStyle, setCurLinkStyle] = useState({});
   // const activeStyle = {
@@ -84,14 +83,7 @@ export default function Navbar({ toggle }) {
         <Bars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, idx) => (
-            <NavLink 
-              to={item.link}
-              // href={item.link}
-              key={idx}
-              // onClick={() => navigate(item.link)}
-              // getProps={linkIsActive}
-              // style={curLinkStyle}
-            >
+            <NavLink to={item.link} key={idx}>
               {item.title}
             </NavLink>
           ))}
@@ -170,8 +162,8 @@ const NavLink = styled(Link)`
 `;
 
 const NavLinkActive = styled(NavLink)`
-border-bottom: 3px solid #01bf71;
-`
+  border-bottom: 3px solid #01bf71;
+`;
 
 const NavMenu = styled.div`
   display: flex;

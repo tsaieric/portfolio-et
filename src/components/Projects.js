@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 export const Projects = () => {
   const projectsData = useStaticQuery(graphql`
     query {
-      projects: allMarkdownRemark(
+      projects: allMdx (
         filter: { frontmatter: { category: { eq: "project" } } }
         sort: { frontmatter: { order: ASC } }
       ) {
@@ -33,7 +33,7 @@ export const Projects = () => {
       <ProjectsWrapper>
         {projectsData.projects.nodes.map((project) => (
           <ProjectCard key={project.id}>
-            <Link to={"/projects/" + project.frontmatter.link}>
+            <Link to={"/"+project.frontmatter.link}>
               <ProjectGatsbyImage
                 image={getImage(
                   project.frontmatter.img.childImageSharp.gatsbyImageData

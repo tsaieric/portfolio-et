@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.14",
+    "@mdx-js/react": "^2.3.0",
     "babel-plugin-styled-components": "^2.1.1",
     "gatsby": "^5.9.0",
     "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-mdx": "^5.9.0",
     "gatsby-plugin-sharp": "^5.9.0",
     "gatsby-plugin-styled-components": "^6.9.0",
     "gatsby-source-filesystem": "^5.9.0",

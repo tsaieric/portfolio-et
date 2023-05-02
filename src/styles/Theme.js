@@ -1,16 +1,10 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-// export const COLORS = {
-//   primary: "#FAFAD2",
-//   secondary: "#A3D9FF",
-//   tertiary: "whitesmoke",
-// };
-
 export const theme = {
   colors: {
-    primary: "#E4572E",
-    secondary: "#FFFFFF",
+    primary: "#FFFFAB",
+    secondary: "#BC96E6",
     tertiary: "#FFFFFF",
   },
 };
