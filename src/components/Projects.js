@@ -69,7 +69,7 @@ const ProjectsContainer = styled.div`
 
 const ProjectsHeading = styled.div`
   margin-top: 30px;
-  color: lightgoldenrodyellow;
+  color: ${({ theme: { colors } }) => colors.primary};
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
@@ -111,10 +111,10 @@ const ProjectGatsbyImage = styled(GatsbyImage)`
   max-width: 100%;
   position: relative;
   border-radius: 30px;
-  filter: brightness(70%);
+  filter: brightness(80%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-style: solid;
-  border-color: lightgoldenrodyellow;
+  border-color: ${({ theme: { colors } }) => colors.secondary};
   
   &:hover {
     filter: brightness(100%);
@@ -150,7 +150,7 @@ const ProjectTitle = styled.div`
   font-size: clamp(1rem, 5vw, 2rem);
   line-height: clamp(1rem, 5vw, 2rem);
   text-align: center;
-  color: whitesmoke;
+  color: ${({ theme: { colors } }) => colors.tertiary};
   /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
   text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black,
     -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black,
@@ -162,7 +162,7 @@ const ProjectStack = styled.div`
   font-size: clamp(0.6rem, 5vw, 1.5rem);
   line-height: clamp(0.6rem, 5vw, 1.5rem);
   text-align: center;
-  color: whitesmoke;
+  color: ${({ theme: { colors } }) => colors.tertiary};
   /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
   text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black,
     -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black,

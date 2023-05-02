@@ -10,11 +10,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 body {
-  background: radial-gradient(
+  background: black; 
+  /* radial-gradient(
     at top left,
     rgb(50, 50, 50) 0%,
     rgb(0, 0, 0) 100%
-  );
+  ); */
   background-repeat: no-repeat;
 }
 

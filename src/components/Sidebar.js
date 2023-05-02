@@ -58,7 +58,7 @@ const SidebarContainer = styled.aside`
 `;
 
 const ClosedIcon = styled(FaTimes)`
-  color: #fff;
+  color: ${({ theme: { colors } }) => colors.tertiary};
 `;
 
 const Icon = styled.div`
@@ -72,7 +72,7 @@ const Icon = styled.div`
 `;
 
 const SidebarWrapper = styled.div`
-  color: #fff;
+  color: ${({ theme: { colors } }) => colors.tertiary};
 `;
 
 const SidebarLink = styled(Link)`
@@ -84,11 +84,11 @@ const SidebarLink = styled(Link)`
   list-style: none;
   transition: 0.2s ease-in-out;
   text-decoration: none;
-  color: #fff;
+  color: ${({ theme: { colors } }) => colors.tertiary};
   cursor: pointer;
 
   &:hover {
-    color: #01bf71;
+    color: ${({ theme: { colors } }) => colors.secondary};//#01bf71;
     transition: 0.2s ease-in-out;
   }
 `;

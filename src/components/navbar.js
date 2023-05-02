@@ -73,11 +73,12 @@ export default function Navbar({ toggle }) {
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
-            {isHover ? (
+            {/* {isHover ? (
               <NavGatsbyImage image={altLogoImg} alt="ET" />
             ) : (
               <NavGatsbyImage image={mainLogoImg} alt="ET" />
-            )}
+            )} */}
+            ET
           </div>
         </NavLogo>
         <Bars onClick={toggle} />
@@ -143,7 +144,7 @@ const NavGatsbyImage = styled(GatsbyImage)`
 `;
 
 const NavLogo = styled(Link)`
-  color: lightgoldenrodyellow;
+  color: ${({ theme: { colors } }) => colors.primary};
   justify-self: flex-start;
   cursor: pointer;
   font-size: 2rem;
@@ -155,7 +156,7 @@ const NavLogo = styled(Link)`
 `;
 
 const NavLink = styled(Link)`
-  color: #fff;
+  color: ${({ theme: { colors } }) => colors.tertiary};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -193,7 +194,7 @@ const NavBtn = styled.div`
 
 const Bars = styled(FaBars)`
   display: none;
-  color: whitesmoke;
+  color: ${({ theme: { colors } }) => colors.tertiary};
 
   @media screen and (max-width: 800px) {
     display: block;
