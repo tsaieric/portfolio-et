@@ -15,6 +15,10 @@ body {
     rgb(0, 0, 0) 100%
   ); */
   background-repeat: no-repeat;
+  
+  //remove browser default css padding for navbar to work
+  margin: 0;
+  padding: 0;
 }
 
 html,
