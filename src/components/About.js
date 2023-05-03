@@ -7,8 +7,8 @@ export default function About({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
 
   return (
-      <AboutContainer id="about">
-        {/* <AboutBg>
+    <AboutContainer id="about">
+      {/* <AboutBg>
           <VideoBg
             src={Video}
             type="video/mp4"
@@ -18,31 +18,31 @@ export default function About({ data }) {
             playsInLine
           />
         </AboutBg> */}
-        <AboutWrapper>
-          <AboutItems imgStart={false}>
-            <Column1>
-              <TextWrapper>
-                <TopLine>Hi, I'm Eric Tsai</TopLine>
-                <Heading>A Software Engineer</Heading>
-                <Subtitle>
-                  Dedicated to creating unforgettable experiences through
-                  interactive media and games.
-                </Subtitle>
-                <Paragraph>
-                  I believe in lifelong learning and growth. With 8+ years of
-                  experience at Google Stadia/YouTube, Alexa Auto, and more, I'm
-                  always improving my programming, game development and design
-                  skills. I love using my expertise & passion to make unique &
-                  fun experiences.
-                </Paragraph>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <AboutGatsbyImage image={portraitImg} alt="Portrait" />
-            </Column2>
-          </AboutItems>
-        </AboutWrapper>
-      </AboutContainer>
+      <AboutWrapper>
+        <AboutItems imgStart={false}>
+          <Column1>
+            <TextWrapper>
+              <TopLine>Hi, I'm Eric Tsai</TopLine>
+              <Heading>A Software Engineer</Heading>
+              <Subtitle>
+                Dedicated to creating unforgettable experiences through
+                interactive media and games.
+              </Subtitle>
+              <Paragraph>
+                I believe in lifelong learning and growth. With 8+ years of
+                experience at Google Stadia/YouTube, Alexa Auto, and more, I'm
+                always improving my programming, game development and design
+                skills. I love using my expertise & passion to make unique & fun
+                experiences.
+              </Paragraph>
+            </TextWrapper>
+          </Column1>
+          <Column2>
+            <AboutGatsbyImage image={portraitImg} alt="Portrait" />
+          </Column2>
+        </AboutItems>
+      </AboutWrapper>
+    </AboutContainer>
   );
 }
 
@@ -53,14 +53,13 @@ const AboutContainer = styled.div`
   align-items: center;
   padding: 0 1rem;
   position: relative;
-  margin-top: 0px; //-80px;
-  /* color: white; */
+  margin-top: 0px;
 
-  //added as part of infowrapper attempt
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
+    padding: 30px 0;
   }
-  /* scroll-margin-top: 80px; */
+
+  scroll-margin-top: 60px;
 `;
 
 const TopLine = styled.p`
@@ -157,10 +156,11 @@ const AboutWrapper = styled.div`
   z-index: 1;
   height: calc(100vh - 80px);
   width: 100%;
-  /* max-width: 1100px; */
   max-height: 100%;
   margin-right: auto;
   margin-left: auto;
+  //set min-height to fix overlapping on width < 400px
+  min-height: 800px;
   /* padding: 0rem calc((100vw-1300px) / 2); */
   padding: 0 12px;
   justify-content: center;

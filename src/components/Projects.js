@@ -103,7 +103,7 @@ const ProjectCard = styled.div`
   position: relative;
   transition: 0.2 ease;
   @media screen and (max-width: 1200px) {
-    height: 388px;
+    height: 250px;
   }
 `;
 const ProjectGatsbyImage = styled(GatsbyImage)`

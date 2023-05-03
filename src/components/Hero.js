@@ -19,9 +19,7 @@ export default function Hero({ data }) {
         <HeroItems imgStart={false}>
           <TextWrapper>
             <TopLine>Hi, I'm Eric Tsai</TopLine>
-            <Heading>
-              A Software Engineer
-            </Heading>
+            <Heading>A Software Engineer</Heading>
             <Subtitle>
               Dedicated to creating unforgettable experiences through
               interactive media and games
