@@ -42,7 +42,6 @@ const ProjectContainer = styled.div`
   margin-top: 30px;
   min-height: 100vh;
   padding: 5rem calc((100vw-1300px) / 2);
-  /* padding: 0 1rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,11 +65,15 @@ const TextWrapper = styled.div`
   max-width: 1000px;
   padding-top: 0;
   padding-bottom: 30px;
-  @media screen and (max-width: 768px) {
-    padding-top: 10px;
-  }
+  padding-left: 24px;
+  padding-right: 24px;
   color: ${({ theme: { colors } }) => colors.tertiary};
-  margin: 24px;
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
 `;
 const ProjectGatsbyImage = styled(GatsbyImage)`
   height: 100%;
@@ -79,4 +82,4 @@ const ProjectGatsbyImage = styled(GatsbyImage)`
   border-radius: 10px;
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   margin: 24px;
-  `;
+`;

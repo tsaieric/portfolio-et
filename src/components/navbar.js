@@ -122,7 +122,7 @@ const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 24px;
-`;
+  `;
 
 const NavGatsbyImage = styled(GatsbyImage)`
   max-width: 50px;
@@ -168,7 +168,7 @@ const NavLinkActive = styled(NavLink)`
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -80px;
+  margin-right: -88px;
   @media screen and (max-width: 800px) {
     display: none;
   }
