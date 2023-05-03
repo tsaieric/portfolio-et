@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 
 export const theme = {
   colors: {
-    primary: "#FFFFAB",
-    secondary: "#BC96E6",
+    primary: "#FCFF9A",
+    secondary: "#648381", //timberwolf#D5D5D5
     tertiary: "#FFFFFF",
   },
 };

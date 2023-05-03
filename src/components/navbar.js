@@ -168,7 +168,7 @@ const NavLinkActive = styled(NavLink)`
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -48px;
+  margin-right: -80px;
   @media screen and (max-width: 800px) {
     display: none;
   }
@@ -177,7 +177,7 @@ const NavMenu = styled.div`
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  /* margin-right: 24px; */
 
   @media screen and (max-width: 800px) {
     display: none;

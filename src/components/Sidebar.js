@@ -88,7 +88,7 @@ const SidebarLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme: { colors } }) => colors.secondary};//#01bf71;
+    color: ${({ theme: { colors } }) => colors.secondary}; //#01bf71;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -103,7 +103,7 @@ const SidebarMenu = styled.ul`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 80px);
   text-align: center;
-
+  padding: 0;
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(6, 60px);
   }

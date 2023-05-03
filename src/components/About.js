@@ -131,7 +131,7 @@ const AboutGatsbyImage = styled(GatsbyImage)`
   margin: 0 0 10px 0;
   padding-right: 0;
   border-radius: 80px;
-  opacity: 0.95;
+  /* opacity: 0.95; */
 `;
 
 const AboutBg = styled.div`
