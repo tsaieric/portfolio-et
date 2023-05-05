@@ -7,6 +7,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import WorkIconSvg from "../assets/images/svg/workIcon.svg";
 import SchoolIconSvg from "../assets/images/svg/schoolIcon.svg";
+import StarIconSvg from "../assets/images/svg/starIcon.svg";
 import careerElements from "../data/careerElements";
 import { navigate } from "gatsby";
 export default function Career() {
@@ -29,7 +30,7 @@ export default function Career() {
                     <img src={SchoolIconSvg} alt="schoolIcon" />
                   )
                 }
-                onTimelineElementClick={() => navigate(element.redirectLink)}
+                // iconOnClick={() => navigate(element.redirectLink)}
               >
                 <h3 className="vertical-timeline-element-title">
                   {element.title}
@@ -37,12 +38,16 @@ export default function Career() {
                 <h5 className="vertical-timeline-element-subtitle">
                   {element.subtitle}
                 </h5>
-                <p id="description">
-                  {element.list && element.list.map((abc) => <p>{abc}</p>)}
-                </p>
+                <CareerParagraph>
+                  {element.list &&
+                    element.list.map((description) => <p>{description}</p>)}
+                </CareerParagraph>
               </CareerTimelineElement>
             );
           })}
+          <CareerTimelineElement
+            icon={<img src={StarIconSvg} alt="workIcon" />}
+          />
         </VerticalTimeline>
       </CareerWrapper>
     </CareerContainer>
@@ -81,12 +86,7 @@ const CareerWrapper = styled.div`
 
 const CareerTimelineElement = styled(VerticalTimelineElement)`
   color: ${({ theme: { colors } }) => colors.tertiary};
-  cursor: pointer;
-  filter: brightness(100%);
-  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    filter: brightness(120%);
-  }
+
   .vertical-timeline-element-content {
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
       0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
@@ -94,6 +94,14 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
     background-color: ${({ theme: { colors } }) => colors.secondary};
     border-radius: 1.5em;
   }
+  /* .vertical-timeline-element-icon {
+    cursor: pointer;
+    filter: brightness(100%);
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      filter: brightness(120%);
+    }
+  } */
   .vertical-timeline-element-content-arrow {
     top: 22px !important;
     border: 7px solid transparent;
@@ -105,10 +113,29 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
   .vertical-timeline-element-subtitle {
     padding-top: 5px;
     font-size: 1.2em;
-    font-style: italic;
+    /* font-style: italic; */
   }
   .vertical-timeline-element-title {
     color: ${({ theme: { colors } }) => colors.primary};
     font-size: 1.5em;
   }
+  .vertical-timeline-element-content p {
+    font-size: 0.98em;
+    line-height: 1.6;
+  }
+  .vertical-timeline-element-date {
+    font-size: 1.2em !important;
+  }
+  .vertical-timeline-element:last-child {
+    font-size: 2em !important;
+    color: white;
+  }
+
+  @media screen and (max-width: 768px) {
+    .vertical-timeline-element-date {
+      font-size: 1.1em !important;
+    }
+  }
 `;
+
+const CareerParagraph = styled.p``;

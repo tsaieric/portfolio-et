@@ -18,7 +18,7 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /svg/
+          include: `/src/assets/images/svg`
         },
       },
     },
