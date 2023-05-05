@@ -31,7 +31,7 @@ let careerElements = [
       "Developed a Spring framework for data scientists to run analytics on the industrial Internet of Things (IoT) through the Predix platform.",
       "Created a runtime library to deploy analytics from the cloud to thousands of off-site assets.",
     ],
-    date: "September 2011 - June 2013",
+    date: "September 2016 - March 2018",
     icon: "work",
     redirectLink: "https://www.youtube.com/hashtag/shorts",
   },
