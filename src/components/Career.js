@@ -9,13 +9,13 @@ import WorkIconSvg from "../assets/images/svg/workIcon.svg";
 import SchoolIconSvg from "../assets/images/svg/schoolIcon.svg";
 import StarIconSvg from "../assets/images/svg/starIcon.svg";
 import careerElements from "../data/careerElements";
-import { navigate } from "gatsby";
+
 export default function Career() {
   return (
     <CareerContainer id="career">
       <CareerHeading>Career</CareerHeading>
       <CareerWrapper>
-        <VerticalTimeline>
+        <CareerVerticalTimeline>
           {careerElements.map((element) => {
             let isWorkIcon = element.icon === "work";
             return (
@@ -45,10 +45,7 @@ export default function Career() {
               </CareerTimelineElement>
             );
           })}
-          <CareerTimelineElement
-            icon={<img src={StarIconSvg} alt="workIcon" />}
-          />
-        </VerticalTimeline>
+        </CareerVerticalTimeline>
       </CareerWrapper>
     </CareerContainer>
   );
@@ -71,6 +68,9 @@ const CareerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   scroll-margin-top: 80px;
+  @media screen and (max-width: 768px) {
+    margin-top: 60px;
+  }
 `;
 
 const CareerWrapper = styled.div`
@@ -82,6 +82,31 @@ const CareerWrapper = styled.div`
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+
+  //Hides timeline line in order to create lines
+  .vertical-timeline::before {
+    background: transparent !important;
+  }
+  //Creates white line for each timeline element
+  //Terminates white line in first/last elements for single column timeline
+  .vertical-timeline-element:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 18px;
+    height: calc(100%);
+    width: 4px;
+    background: white;
+  }
+  //Moves above generated white line to center in double-column format
+  @media only screen and (min-width: 1170px) {
+    .vertical-timeline.vertical-timeline--two-columns
+      .vertical-timeline-element:not(:last-child)::before {
+      left: 50%;
+      top: 60px;
+      margin-left: -2px;
+    }
+  }
 `;
 
 const CareerTimelineElement = styled(VerticalTimelineElement)`
@@ -138,4 +163,5 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
   }
 `;
 
+const CareerVerticalTimeline = styled(VerticalTimeline)``;
 const CareerParagraph = styled.p``;
