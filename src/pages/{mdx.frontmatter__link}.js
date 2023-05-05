@@ -9,7 +9,7 @@ export default function ProjectPost({ data, children }) {
     <Layout>
       <ProjectContainer>
         <ProjectHeading>{data.mdx.frontmatter.title}</ProjectHeading>
-        <ProjectSubheading>{data.mdx.frontmatter.stack}</ProjectSubheading>{" "}
+        <ProjectSubheading>{data.mdx.frontmatter.stack}</ProjectSubheading>
         <ProjectGatsbyImage
           image={getImage(
             data.mdx.frontmatter.img.childImageSharp.gatsbyImageData

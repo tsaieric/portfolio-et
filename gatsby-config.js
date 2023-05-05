@@ -15,6 +15,14 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         // The unique name for each instance
@@ -41,8 +49,8 @@ module.exports = {
     menuData: [
       { title: "About", link: "/#about" },
       { title: "Projects", link: "/#projects" },
-      { title: "Career", link: "/career" },
-      { title: "Contact", link: "/contact" },
+      { title: "Career", link: "/#career" },
+      { title: "Contact", link: "/#contact" },
     ],
   },
 };

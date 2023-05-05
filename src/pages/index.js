@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Hero from "../components/Hero";
 import { Projects } from "../components/Projects";
 import About from "../components/About";
+import Career from "../components/Career";
 
 export default function Home({ data }) {
   return (
@@ -11,6 +12,7 @@ export default function Home({ data }) {
       <Hero data={data.file.childImageSharp} />
       <About data={data.file.childImageSharp} />
       <Projects />
+      <Career />
     </Layout>
   );
 }
