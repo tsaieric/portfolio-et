@@ -15,6 +15,7 @@ export default function Contact() {
                 <img src={EmailSvg} alt="emailIcon" />
               </a>
             </ContactImg>
+            <ContactText>erictsai.dev@gmail.com</ContactText>
           </Column1>
           <Column2>
             <ContactImg>
@@ -22,6 +23,7 @@ export default function Contact() {
                 <img src={LinkedinSvg} alt="linkedinIcon" />
               </a>
             </ContactImg>
+            <ContactText>linkedin.com/in/erictsaidev</ContactText>
           </Column2>
         </ContactItems>
       </ContactWrapper>
@@ -37,7 +39,16 @@ const ContactHeading = styled.div`
   text-align: center;
   margin-bottom: 1rem;
 `;
+const ContactText = styled.p`
+  color: ${({ theme: { colors } }) => colors.secondary};
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
 
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+`;
 const ContactContainer = styled.div`
   min-height: 66vh;
   padding: 5rem calc((100vw-1300px) / 2);
@@ -64,7 +75,7 @@ const ContactWrapper = styled.div`
 `;
 
 const ContactItems = styled.div`
-  display: grid;
+  display: flex;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
   grid-template-areas: "col1 col2";
@@ -87,10 +98,26 @@ const Column1 = styled.div`
   padding: 0 calc(100vw / 10);
   padding-top: calc(100vw / 20);
   grid-area: col1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 
 const Column2 = styled.div`
   padding: 0 calc(100vw / 10);
   padding-top: calc(100vw / 20);
   grid-area: col2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
