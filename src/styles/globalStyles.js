@@ -32,8 +32,10 @@ html {
   //prevent sidebar from impacting navbar. 
   //Calculates scrollbar width and -right 
   //margin that amount. If no bar, then it's 0
-  overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
+  @media screen and (min-width: 1000px) {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
 }
 
 /**
