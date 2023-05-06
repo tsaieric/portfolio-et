@@ -1,12 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import WorkIconSvg from "../assets/images/svg/workIcon.svg";
+import EmailSvg from "../assets/images/svg/emailIcon.svg";
+import LinkedinSvg from "../assets/images/svg/linkedinIcon.svg";
 
 export default function Contact() {
   return (
     <ContactContainer id="contact">
-      <ContactWrapper>
       <ContactHeading>Contact</ContactHeading>
+      <ContactWrapper>
+        <ContactItems>
+          <Column1>
+            <ContactImg>
+              <a href="mailto: erictsai.dev@gmail.com" target="_blank">
+                <img src={EmailSvg} alt="emailIcon" />
+              </a>
+            </ContactImg>
+          </Column1>
+          <Column2>
+            <ContactImg>
+              <a href="https://www.linkedin.com/in/erictsaidev" target="_blank">
+                <img src={LinkedinSvg} alt="linkedinIcon" />
+              </a>
+            </ContactImg>
+          </Column2>
+        </ContactItems>
       </ContactWrapper>
     </ContactContainer>
   );
@@ -22,7 +39,7 @@ const ContactHeading = styled.div`
 `;
 
 const ContactContainer = styled.div`
-  min-height: 100vh;
+  min-height: 66vh;
   padding: 5rem calc((100vw-1300px) / 2);
 
   display: flex;
@@ -32,9 +49,8 @@ const ContactContainer = styled.div`
   margin-top: 180px;
   @media screen and (max-width: 768px) {
     margin-top: 60px;
-
   }
-  `;
+`;
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -45,4 +61,36 @@ const ContactWrapper = styled.div`
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+`;
+
+const ContactItems = styled.div`
+  display: grid;
+  grid-auto-columns: minmax(auto, 1fr);
+  align-items: center;
+  grid-template-areas: "col1 col2";
+  height: 100%;
+  width: auto;
+`;
+
+const ContactImg = styled.div`
+  height: clamp(8rem, 10vw, 10rem);
+  width: clamp(8rem, 10vw, 10rem);
+  filter: brightness(90%);
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover {
+    filter: brightness(100%);
+    transform: translateY(-5px);
+  }
+`;
+
+const Column1 = styled.div`
+  padding: 0 calc(100vw / 10);
+  padding-top: calc(100vw / 20);
+  grid-area: col1;
+`;
+
+const Column2 = styled.div`
+  padding: 0 calc(100vw / 10);
+  padding-top: calc(100vw / 20);
+  grid-area: col2;
 `;
