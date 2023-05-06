@@ -11,7 +11,7 @@ export default function Contact() {
         <ContactItems>
           <Column1>
             <ContactImg>
-              <a href="mailto: erictsai.dev@gmail.com" target="_blank">
+              <a href="mailto: erictsai.dev@gmail.com" target="_blank" rel="noopener noreferrer">
                 <img src={EmailSvg} alt="emailIcon" />
               </a>
             </ContactImg>
@@ -19,7 +19,7 @@ export default function Contact() {
           </Column1>
           <Column2>
             <ContactImg>
-              <a href="https://www.linkedin.com/in/erictsaidev" target="_blank">
+              <a href="https://www.linkedin.com/in/erictsaidev" target="_blank" rel="noopener noreferrer">
                 <img src={LinkedinSvg} alt="linkedinIcon" />
               </a>
             </ContactImg>
@@ -89,6 +89,7 @@ const ContactImg = styled.div`
   filter: brightness(90%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover {
+    cursor: pointer;
     filter: brightness(100%);
     transform: translateY(-5px);
   }
