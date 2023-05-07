@@ -82,14 +82,15 @@ const SidebarLink = styled(Link)`
   font-size: 1.5rem;
   text-decoration: none;
   list-style: none;
-  transition: 0.2s ease-in-out;
   text-decoration: none;
   color: ${({ theme: { colors } }) => colors.tertiary};
-  cursor: pointer;
 
-  &:hover {
-    color: ${({ theme: { colors } }) => colors.secondary}; //#01bf71;
-    transition: 0.2s ease-in-out;
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: ${({ theme: { colors } }) => colors.secondary};
+      transition: 0.2s ease-in-out;
+    }
   }
 `;
 

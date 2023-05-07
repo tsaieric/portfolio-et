@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 export const Projects = () => {
   const projectsData = useStaticQuery(graphql`
     query {
-      projects: allMdx (
+      projects: allMdx(
         filter: { frontmatter: { category: { eq: "project" } } }
         sort: { frontmatter: { order: ASC } }
       ) {
@@ -33,7 +33,7 @@ export const Projects = () => {
       <ProjectsWrapper>
         {projectsData.projects.nodes.map((project) => (
           <ProjectCard key={project.id}>
-            <Link to={"/"+project.frontmatter.link}>
+            <Link to={"/" + project.frontmatter.link}>
               <ProjectGatsbyImage
                 image={getImage(
                   project.frontmatter.img.childImageSharp.gatsbyImageData
@@ -111,13 +111,16 @@ const ProjectGatsbyImage = styled(GatsbyImage)`
   max-width: 100%;
   position: relative;
   border-radius: 30px;
-  filter: brightness(80%);
-  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  filter: brightness(100%);
   border-style: solid;
   border-color: ${({ theme: { colors } }) => colors.secondary};
-  
-  &:hover {
-    filter: brightness(100%);
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      filter: brightness(120%);
+      transform: translateY(-2px);
+      transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
   }
 `;
 

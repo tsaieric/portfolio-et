@@ -19,9 +19,6 @@ export default function Navbar({ toggle }) {
     window.addEventListener("scroll", changeNav);
   }, []);
 
-  //change logo on hover
-  const [isHover, setIsHover] = useState(false);
-
   //custom active link style
   // const [curLinkStyle, setCurLinkStyle] = useState({});
   // const activeStyle = {
@@ -68,16 +65,9 @@ export default function Navbar({ toggle }) {
     <Nav scrollNav={scrollNav}>
       <NavbarContainer>
         <NavLogo to="/">
-          <div
-            onMouseEnter={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}
-          >
-            {/* {isHover ? (
-              <NavGatsbyImage image={altLogoImg} alt="ET" />
-            ) : (
-              <NavGatsbyImage image={mainLogoImg} alt="ET" />
-            )} */}
-            ET
+          <div>
+            {/* <NavGatsbyImage image={altLogoImg} alt="ETLogo" /> */}
+            <NavGatsbyImage image={mainLogoImg} alt="ETLogo" />
           </div>
         </NavLogo>
         <Bars onClick={toggle} />
@@ -122,16 +112,21 @@ const NavbarContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 24px;
-  `;
+`;
 
 const NavGatsbyImage = styled(GatsbyImage)`
   max-width: 50px;
   width: 100%;
   height: auto;
   margin-top: 5px;
-  &:hover {
-    transform: translateY(-2px);
-    /* transform: all 0.2s ease-in-out; */
+  filter: brightness(100%);
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      filter: brightness(50%);
+      transform: translateY(-2px);
+      transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
   }
 `;
 

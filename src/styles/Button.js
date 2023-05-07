@@ -17,10 +17,12 @@ export const Button = styled(Link)`
   transition: 0.3s !important;
   border-radius: ${({ round }) => (round ? `50px` : `none`)};
 
-  &:hover {
-    background: ${({ primary, theme: { colors } }) =>
-      primary ? colors.secondary : colors.primary};
-    transform: translateY(-2px);
-    /* transform: all 0.2s ease-in-out; */
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ primary, theme: { colors } }) =>
+        primary ? colors.secondary : colors.primary};
+      transform: translateY(-2px);
+      /* transform: all 0.2s ease-in-out; */
+    }
   }
 `;
