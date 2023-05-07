@@ -46,27 +46,18 @@ export default function Navbar({ toggle }) {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      altLogoImg: file(
-        relativePath: { eq: "images/logo/altLogoSquare180.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
     }
   `);
   const menuData = data.site.siteMetadata.menuData;
   const mainLogoImg = getImage(
     data.mainLogoImg.childImageSharp.gatsbyImageData
   );
-  const altLogoImg = getImage(data.altLogoImg.childImageSharp.gatsbyImageData);
 
   return (
     <Nav scrollNav={scrollNav}>
       <NavbarContainer>
         <NavLogo to="/">
           <div>
-            {/* <NavGatsbyImage image={altLogoImg} alt="ETLogo" /> */}
             <NavGatsbyImage image={mainLogoImg} alt="ETLogo" />
           </div>
         </NavLogo>
@@ -172,7 +163,6 @@ const NavMenu = styled.div`
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
-  /* margin-right: 24px; */
 
   @media screen and (max-width: 800px) {
     display: none;
