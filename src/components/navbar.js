@@ -20,8 +20,9 @@ export default function Navbar({ toggle }) {
   const [activeSection, setActiveSection] = useState("");
   const observer = useRef(null);
 
-  //useEffect for scroll AND highlight active link
+  //useEffect for the above two comments
   useEffect(() => {
+    //change navbar to black on scroll
     window.addEventListener("scroll", changeNav);
 
     //observe when target intersects with root
@@ -29,7 +30,6 @@ export default function Navbar({ toggle }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
-          console.log(entry.target.id);
         }
       },
       {
@@ -39,18 +39,17 @@ export default function Navbar({ toggle }) {
       }
     );
 
-    //Get custom attribute data-section from all sections
+    //Get all sections where classtype = home-section
     const sections = document.querySelectorAll(".home-section");
-    sections.forEach((section) => {
-      console.log(section);
-    });
     sections.forEach((section) => {
       observer.current.observe(section);
     });
 
     //Cleanup function to remove observer
     return () => {
-      observer.disconnect();
+      sections.forEach((section) => {
+        observer.current.unobserve(section);
+      });
     };
   }, []);
 
@@ -170,16 +169,17 @@ const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
 
-  border-bottom: ${(props) => (props.$isActive ? "3px solid #01bf71;" : "0px")};
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-2px);
-    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-`;
+  //highlight navlink when scrolled to
+  border-bottom: ${(props) =>
+    props.$isActive ? `3px solid ${props.theme.colors.primary};` : "0px;"};
 
-const NavLinkActive = styled(NavLink)`
-  border-bottom: 3px solid #01bf71;
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-2px);
+      transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
 `;
 
 const NavMenu = styled.div`
