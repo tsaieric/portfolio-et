@@ -5,9 +5,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function About({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
-
   return (
-    <AboutContainer id="about">
+    <AboutContainer className="home-section" id="About">
       {/* <AboutBg>
           <VideoBg
             src={Video}

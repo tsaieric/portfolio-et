@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 * {
     font-family: 'Montserrat';
     box-sizing: border-box;
-  }
+}
 
 body {
   background: black; 

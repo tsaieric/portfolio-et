@@ -47,10 +47,10 @@ module.exports = {
     copyright: "Copyright 2023 Eric Tsai",
     logoImg: "./src/assets/images/logo/logo192x192.png",
     menuData: [
-      { title: "About", link: "/#about" },
-      { title: "Projects", link: "/#projects" },
-      { title: "Career", link: "/#career" },
-      { title: "Contact", link: "/#contact" },
+      { title: "About", link: "/#About" },
+      { title: "Projects", link: "/#Projects" },
+      { title: "Career", link: "/#Career" },
+      { title: "Contact", link: "/#Contact" },
     ],
   },
 };

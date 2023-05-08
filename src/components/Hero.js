@@ -8,7 +8,7 @@ export default function Hero({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
 
   return (
-    <HeroContainer id="hero">
+    <HeroContainer className="home-section" id="Hero">
       <HeroBg>
         <VideoBg autoPlay loop muted playsInLine>
           <source src={VideoMp4} type="video/mp4" />

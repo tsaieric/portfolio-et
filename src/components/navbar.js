@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
@@ -15,20 +15,44 @@ export default function Navbar({ toggle }) {
       setScrollNav(false);
     }
   };
+
+  //active nav link based on active section
+  const [activeSection, setActiveSection] = useState("");
+  const observer = useRef(null);
+
+  //useEffect for scroll AND highlight active link
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
-  }, []);
 
-  //custom active link style
-  // const [curLinkStyle, setCurLinkStyle] = useState({});
-  // const activeStyle = {
-  //   fontWeight: 'bold',
-  //   color: 'red',
-  //   textDecoration: 'underline',
-  // };
-  // const linkIsActive = ({ href, location }) => {
-  //   return href === location.pathname + location.hash ? setCurLinkStyle(activeStyle) : setCurLinkStyle({})
-  // };
+    //observe when target intersects with root
+    observer.current = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+          console.log(entry.target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    //Get custom attribute data-section from all sections
+    const sections = document.querySelectorAll(".home-section");
+    sections.forEach((section) => {
+      console.log(section);
+    });
+    sections.forEach((section) => {
+      observer.current.observe(section);
+    });
+
+    //Cleanup function to remove observer
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const data = useStaticQuery(graphql`
     query {
@@ -64,7 +88,11 @@ export default function Navbar({ toggle }) {
         <Bars onClick={toggle} />
         <NavMenu>
           {menuData.map((item, idx) => (
-            <NavLink to={item.link} key={idx}>
+            <NavLink
+              to={item.link}
+              key={idx}
+              $isActive={activeSection === item.title}
+            >
               {item.title}
             </NavLink>
           ))}
@@ -142,8 +170,11 @@ const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
 
-  &.active {
-    border-bottom: 3px solid #01bf71;
+  border-bottom: ${(props) => (props.$isActive ? "3px solid #01bf71;" : "0px")};
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 `;
 

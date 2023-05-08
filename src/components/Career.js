@@ -12,7 +12,7 @@ import careerElements from "../data/careerElements";
 
 export default function Career() {
   return (
-    <CareerContainer id="career">
+    <CareerContainer className="home-section" id="Career">
       <CareerHeading>Career</CareerHeading>
       <CareerWrapper>
         <CareerVerticalTimeline>
@@ -40,7 +40,9 @@ export default function Career() {
                 </h5>
                 <CareerParagraph>
                   {element.list &&
-                    element.list.map((description) => <p>{description}</p>)}
+                    element.list.map((description, id) => (
+                      <p key={id}>{description}</p>
+                    ))}
                 </CareerParagraph>
               </CareerTimelineElement>
             );
@@ -164,4 +166,4 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
 `;
 
 const CareerVerticalTimeline = styled(VerticalTimeline)``;
-const CareerParagraph = styled.p``;
+const CareerParagraph = styled.div``;

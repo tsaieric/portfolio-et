@@ -28,7 +28,7 @@ export const Projects = () => {
   `);
 
   return (
-    <ProjectsContainer id="projects">
+    <ProjectsContainer className="home-section" id="Projects">
       <ProjectsHeading>Projects</ProjectsHeading>
       <ProjectsWrapper>
         {projectsData.projects.nodes.map((project) => (
