@@ -10,19 +10,32 @@ export default function About({ data }) {
         <AboutItems imgStart={false}>
           <Column1>
             <TextWrapper>
-              <TopLine>Hi, I'm Eric Tsai</TopLine>
-              <Heading>A Software Engineer</Heading>
-              <Subtitle>
-                Dedicated to creating unforgettable experiences through
-                interactive media and games.
-              </Subtitle>
+              <TopLine>
+                I believe in lifelong learning and continuous personal growth.
+              </TopLine>
+              <Heading></Heading>
+              <Heading>
+                With 8+ years of professional experience at Google Stadia,
+                YouTube, Alexa Auto, etc., I've constantly improved my unique
+                set of skills in programming, game development and design.
+              </Heading>
+              {/* As a kid, I loved games because they challenged me creatively and mentally.  */}
               <Paragraph>
+                I've loved games since I was a kid. Just like software
+                engineering, gaming made me brainstorm innovative solutions to
+                unique problems. Gaming challenged me creatively and mentally,
+                sparking my passion for software, hardware, and tech.
+                Now, I find myself loving my work in the interactive media space
+                because it enables me to combine all my passions where I can
+                create similarly engaging experiences.
+              </Paragraph>
+              {/* <Paragraph>
                 I believe in lifelong learning and growth. With 8+ years of
                 experience at Google Stadia/YouTube, Alexa Auto, and more, I'm
                 always improving my programming, game development and design
                 skills. I love using my expertise & passion to make unique & fun
                 experiences.
-              </Paragraph>
+              </Paragraph> */}
             </TextWrapper>
           </Column1>
           <Column2>
@@ -62,12 +75,12 @@ const TopLine = styled.p`
 
 const Heading = styled.h1`
   margin-bottom: 20px;
-  font-size: 48px;
+  font-size: 18px;
   line-height: 1.1;
   font-weight: 600;
   color: ${({ theme: { colors } }) => colors.primary};
   @media screen and (max-width: 480px) {
-    font-size: 33px;
+    font-size: 18px;
   }
 `;
 
