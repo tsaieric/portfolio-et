@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 export default function Home({ data }) {
   return (
     <Layout>
-      <Hero home-section id="Hero" data={data.file.childImageSharp} />
+      <Hero home-section id="Hero" />
       <About home-section id="About" data={data.file.childImageSharp} />
       <Projects home-section id="Projects" />
       <Career home-section id="Career" />

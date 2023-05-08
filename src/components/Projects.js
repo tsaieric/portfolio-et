@@ -106,6 +106,7 @@ const ProjectCard = styled.div`
     height: 250px;
   }
 `;
+
 const ProjectGatsbyImage = styled(GatsbyImage)`
   height: 100%;
   max-width: 100%;
@@ -141,6 +142,7 @@ const TitleWrap = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 `;
+
 const StackWrap = styled.div`
   position: absolute;
   top: 80%;

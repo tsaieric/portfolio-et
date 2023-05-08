@@ -1,22 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Video from "../assets/videos/techspin1080p.mp4";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function About({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
   return (
     <AboutContainer className="home-section" id="About">
-      {/* <AboutBg>
-          <VideoBg
-            src={Video}
-            type="video/mp4"
-            autoPlay
-            loop
-            muted
-            playsInLine
-          />
-        </AboutBg> */}
       <AboutWrapper>
         <AboutItems imgStart={false}>
           <Column1>
@@ -70,6 +59,7 @@ const TopLine = styled.p`
   text-transform: uppercase;
   margin-bottom: 16px;
 `;
+
 const Heading = styled.h1`
   margin-bottom: 20px;
   font-size: 48px;
@@ -80,6 +70,7 @@ const Heading = styled.h1`
     font-size: 33px;
   }
 `;
+
 const Subtitle = styled.p`
   max-width: 480px;
   margin-bottom: 20px;
@@ -92,6 +83,7 @@ const Subtitle = styled.p`
     font-size: 20px;
   }
 `;
+
 const Paragraph = styled.p`
   max-width: 480px;
   font-size: 18px;
@@ -102,14 +94,17 @@ const Paragraph = styled.p`
     font-size: 17px;
   }
 `;
+
 const Column1 = styled.div`
   padding: 0 15px;
   grid-area: col1;
 `;
+
 const Column2 = styled.div`
   padding: 0 15px;
   grid-area: col2;
 `;
+
 const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
@@ -130,24 +125,6 @@ const AboutGatsbyImage = styled(GatsbyImage)`
   padding-right: 0;
   border-radius: 80px;
   /* opacity: 0.95; */
-`;
-
-const AboutBg = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-`;
-
-const VideoBg = styled.video`
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
 `;
 
 const AboutWrapper = styled.div`

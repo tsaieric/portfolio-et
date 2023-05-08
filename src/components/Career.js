@@ -7,7 +7,6 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import WorkIconSvg from "../assets/images/svg/workIcon.svg";
 import SchoolIconSvg from "../assets/images/svg/schoolIcon.svg";
-import StarIconSvg from "../assets/images/svg/starIcon.svg";
 import careerElements from "../data/careerElements";
 
 export default function Career() {
@@ -140,7 +139,6 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
   .vertical-timeline-element-subtitle {
     padding-top: 5px;
     font-size: 1.2em;
-    /* font-style: italic; */
   }
   .vertical-timeline-element-title {
     color: ${({ theme: { colors } }) => colors.primary};

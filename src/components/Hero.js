@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import VideoMp4 from "../assets/videos/techspin1080p.mp4";
 import VideoWebm from "../assets/videos/techspin1080p.webm";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-export default function Hero({ data }) {
-  const portraitImg = getImage(data.gatsbyImageData);
-
+export default function Hero() {
   return (
     <HeroContainer className="home-section" id="Hero">
       <HeroBg>
@@ -48,10 +45,6 @@ const HeroContainer = styled.div`
   scroll-margin-top: 80px;
 `;
 
-const HighlightWords = styled.text`
-  color: ${({ theme: { colors } }) => colors.secondary};
-`;
-
 const TopLine = styled.p`
   color: ${({ theme: { colors } }) => colors.secondary};
   font-weight: 700;
@@ -60,23 +53,26 @@ const TopLine = styled.p`
   margin-bottom: 16px;
   font-size: clamp(0.8rem, 4vw, 1.6em);
 `;
+
 const Heading = styled.h1`
   margin-bottom: 20px;
   font-weight: 600;
   color: ${({ theme: { colors } }) => colors.primary};
   font-size: clamp(3rem, 8vw, 5rem);
 `;
+
 const Subtitle = styled.p`
   margin-bottom: 20px;
   font-weight: 600;
   color: ${({ theme: { colors } }) => colors.secondary};
   font-size: clamp(1.2rem, 5vw, 2.5rem);
 `;
-const Paragraph = styled.p`
-  font-weight: 300;
-  color: ${({ theme: { colors } }) => colors.tertiary};
-  font-size: clamp(1.5rem, 3vw, 2rem);
-`;
+
+// const Paragraph = styled.p`
+//   font-weight: 300;
+//   color: ${({ theme: { colors } }) => colors.tertiary};
+//   font-size: clamp(1.5rem, 3vw, 2rem);
+// `;
 
 const TextWrapper = styled.div`
   max-width: 1100px;
@@ -85,17 +81,6 @@ const TextWrapper = styled.div`
   @media screen and (max-width: 768px) {
     padding-top: 20px;
   }
-`;
-
-const HeroGatsbyImage = styled(GatsbyImage)`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 `;
 
 const HeroBg = styled.div`
