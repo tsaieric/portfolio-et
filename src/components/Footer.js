@@ -8,6 +8,11 @@ export default function Footer() {
         <Copyright>
           Copyright &copy; {new Date().getFullYear()} erictsai.dev. All rights
           reserved.
+          <br />I developed this website from scratch as a fun Gatsby+React
+          project, modeling partially after Jamstack architecture. I'm not a front-end focused engineer but wanted to get a feel
+          for React and make my own website vs. relying on Wordpress. I only used a few packages
+          for gatsby image optimization and for a vertical-timeline. Everything
+          else, I learned using a variety of sources listed below.
         </Copyright>
         <LinkContainer>
           <LinkItem>
@@ -41,6 +46,11 @@ export default function Footer() {
               ReactVerticalTimelineSource
             </Link>
           </LinkItem>
+          <LinkItem>
+            <Link href="https://netacci.hashnode.dev/how-to-highlight-active-navigation-on-scroll-in-react">
+              ScrollHighlighting
+            </Link>
+          </LinkItem>{" "}
         </LinkContainer>
       </div>
     </FooterContainer>
@@ -58,6 +68,7 @@ const FooterContainer = styled.footer`
 const Copyright = styled.p`
   text-align: center;
   font-size: 14px;
+  max-width: 1200px;
 `;
 
 const LinkContainer = styled.div`
@@ -68,7 +79,7 @@ const LinkContainer = styled.div`
   align-content: center;
 `;
 
-const LinkItem = styled.text`
+const LinkItem = styled.div`
   font-size: 12px;
 `;
 
