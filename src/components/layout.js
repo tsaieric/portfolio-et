@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { GlobalStyle } from "../styles/globalStyles";
 import Sidebar from "./Sidebar";
 import Theme from "../styles/Theme";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,7 @@ export default function Layout({ children }) {
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
         <div className="content">{children}</div>
-        <footer>
-          <p>Copyright 2023 Eric Tsai</p>
-        </footer>
+        <Footer />
       </div>
     </Theme>
   );
