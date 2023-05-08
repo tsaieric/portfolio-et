@@ -4,30 +4,45 @@ import styled from "styled-components";
 export default function Footer() {
   return (
     <FooterContainer>
-        <div>
-          <Copyright>
-            Copyright &copy; {new Date().getFullYear()} erictsai.dev. All rights reserved.
-          </Copyright>
-          <LinkContainer>
-            <LinkItem>
-              <Link href="https://www.pexels.com">VideoSource</Link>
-            </LinkItem>
-            <LinkItem>
-              <Link href="https://www.svgrepo.com">SvgsSource</Link>
-            </LinkItem>
-            <LinkItem>
-              <Link href="https://www.evandromacedo.com/active-nav-links-in-many-routes-with-gatsby-and-styled-components/">
-                GatsbyRouterKnowledgeSource
-              </Link>
-            </LinkItem>
-            <LinkItem>
-              <Link href="https://stackoverflow.com/questions/66602751/can-html-anchor-tags-ever-be-used-for-internal-links-in-gatsby">
-                AnchorGatsbyKnowledgeSource
-              </Link>
-            </LinkItem>
-          </LinkContainer>
-        </div>
-
+      <div>
+        <Copyright>
+          Copyright &copy; {new Date().getFullYear()} erictsai.dev. All rights
+          reserved.
+        </Copyright>
+        <LinkContainer>
+          <LinkItem>
+            <Link href="https://www.pexels.com">VideoSource</Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://www.svgrepo.com">SvgsSource</Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://www.gatsbyjs.com/docs">
+              GatsbyReactKnowledgeSource
+            </Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://www.evandromacedo.com/active-nav-links-in-many-routes-with-gatsby-and-styled-components/">
+              GatsbyRouterKnowledgeSource
+            </Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://stackoverflow.com/questions/66602751/can-html-anchor-tags-ever-be-used-for-internal-links-in-gatsby">
+              GatsbyAnchorKnowledgeSource
+            </Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A">
+              ReactPartialKnowledgeSource
+            </Link>
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://github.com/stephane-monnot/react-vertical-timeline">
+              ReactVerticalTimelineSource
+            </Link>
+          </LinkItem>
+        </LinkContainer>
+      </div>
     </FooterContainer>
   );
 }
@@ -41,7 +56,7 @@ const FooterContainer = styled.footer`
 `;
 
 const Copyright = styled.p`
-text-align: center;
+  text-align: center;
   font-size: 14px;
 `;
 
