@@ -149,7 +149,7 @@ const AboutWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
   //set min-height to fix overlapping on width < 400px
-  min-height: 800px;
+  min-height: 900px;
   /* padding: 0rem calc((100vw-1300px) / 2); */
   padding: 0 12px;
   justify-content: center;
