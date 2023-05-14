@@ -34,7 +34,7 @@ export default function Navbar({ toggle }) {
       },
       {
         root: null,
-        rootMargin: "0px",
+        rootMargin: "60px",
         threshold: 0.5,
       }
     );

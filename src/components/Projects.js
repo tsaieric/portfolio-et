@@ -113,8 +113,7 @@ const ProjectGatsbyImage = styled(GatsbyImage)`
   position: relative;
   border-radius: 30px;
   filter: brightness(100%);
-  border-style: solid;
-  border-color: ${({ theme: { colors } }) => colors.secondary};
+  border: 3px solid ${({ theme: { colors } }) => colors.bgHighlight};  /* set the border color here */
   @media (hover: hover) {
     &:hover {
       cursor: pointer;

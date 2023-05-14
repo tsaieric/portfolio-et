@@ -117,7 +117,7 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
       0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
     padding: 1em 2em !important;
-    background-color: ${({ theme: { colors } }) => colors.secondary};
+    background-color: ${({ theme: { colors } }) => colors.bgTransluscent};
     border-radius: 1.5em;
   }
   /* .vertical-timeline-element-icon {
@@ -131,10 +131,10 @@ const CareerTimelineElement = styled(VerticalTimelineElement)`
   .vertical-timeline-element-content-arrow {
     top: 22px !important;
     border: 7px solid transparent;
-    border-right: 7px solid ${({ theme: { colors } }) => colors.secondary};
+    border-right: 7px solid ${({ theme: { colors } }) => colors.bgTransluscent};
   }
   .vertical-timeline-element-icon {
-    background-color: ${({ theme: { colors } }) => colors.secondary} !important;
+    background-color: ${({ theme: { colors } }) => colors.bgHighlight} !important;
   }
   .vertical-timeline-element-subtitle {
     padding-top: 5px;

@@ -3,9 +3,11 @@ import { ThemeProvider } from "styled-components";
 
 export const theme = {
   colors: {
-    primary: "#FCFF9A",
-    secondary: "#648381", //timberwolf#D5D5D5
+    primary: "#FFD700", //Zelda Gold
+    secondary: "#638192", //Payne's Gray
     tertiary: "#FFFFFF",
+    bgHighlight: "#2F4F4F", //Dark Slate Gray
+    bgTransluscent: "rgba(47, 79, 79, 0.5);", //Dark Slate Gray Transluscent
   },
 };
 
