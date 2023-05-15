@@ -30,12 +30,15 @@ export default function Navbar({ toggle }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
         }
       },
       {
         root: null,
-        rootMargin: "60px",
-        threshold: 0.5,
+        rootMargin: "10px",
+        threshold: 0.2,
       }
     );
 

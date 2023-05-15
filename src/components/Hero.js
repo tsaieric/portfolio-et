@@ -5,7 +5,7 @@ import VideoWebm from "../assets/videos/techspin1080p.webm";
 
 export default function Hero() {
   return (
-    <HeroContainer className="home-section" id="Hero">
+    <HeroContainer className="home-section hidden" id="Hero">
       <HeroBg>
         <VideoBg autoPlay loop muted playsInLine>
           <source src={VideoMp4} type="video/mp4" />

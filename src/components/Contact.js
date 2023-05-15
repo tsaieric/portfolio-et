@@ -5,7 +5,7 @@ import LinkedinSvg from "../assets/images/svg/linkedinIcon.svg";
 
 export default function Contact() {
   return (
-    <ContactContainer className="home-section" id="Contact">
+    <ContactContainer className="home-section hidden" id="Contact">
       <ContactHeading>Contact</ContactHeading>
       <ContactWrapper>
         <ContactItems>

@@ -38,6 +38,19 @@ html {
   }
 }
 
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-20%);
+  transition: all 0.88s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
 /**
  * Disable smooth scrolling when users have prefers-reduced-motion enabled
  */
@@ -45,5 +58,9 @@ html {
 	html {
 		scroll-behavior: auto;
 	}
+
+  .hidden {
+    transition: none;
+  }
 }
 `;

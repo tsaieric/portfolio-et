@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 export default function About({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
   return (
-    <AboutContainer className="home-section" id="About">
+    <AboutContainer className="home-section hidden" id="About">
       <AboutWrapper>
         <AboutItems imgStart={false}>
           <Column1>
@@ -19,9 +19,8 @@ export default function About({ data }) {
                 YouTube, Alexa Auto, etc., I've constantly improved my unique
                 set of skills in programming, game development and design.
               </Heading>
-              {/* As a kid, I loved games because they challenged me creatively and mentally.  */}
               <Paragraph>
-                I've loved games since I was a kid. Just like software
+                I've loved games since I was a kid. Like software
                 engineering, gaming made me brainstorm innovative solutions to
                 unique problems. Gaming challenged me creatively and mentally,
                 sparking my passion for software, hardware, and tech.
@@ -66,7 +65,7 @@ const AboutContainer = styled.div`
 const TopLine = styled.p`
   color: ${({ theme: { colors } }) => colors.secondary};
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1.3;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -76,7 +75,7 @@ const TopLine = styled.p`
 const Heading = styled.h1`
   margin-bottom: 20px;
   font-size: 18px;
-  line-height: 1.1;
+  line-height: 1.3;
   font-weight: 600;
   color: ${({ theme: { colors } }) => colors.primary};
   @media screen and (max-width: 480px) {
@@ -88,7 +87,7 @@ const Subtitle = styled.p`
   max-width: 480px;
   margin-bottom: 20px;
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.3;
   font-weight: 400;
   color: ${({ theme: { colors } }) => colors.secondary};
 
@@ -100,7 +99,7 @@ const Subtitle = styled.p`
 const Paragraph = styled.p`
   max-width: 480px;
   font-size: 18px;
-  line-height: 1.2;
+  line-height: 1.3;
   font-weight: 300;
   color: ${({ theme: { colors } }) => colors.tertiary};
   @media screen and (max-width: 480px) {

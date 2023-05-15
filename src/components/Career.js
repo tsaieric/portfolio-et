@@ -11,7 +11,7 @@ import careerElements from "../data/careerElements";
 
 export default function Career() {
   return (
-    <CareerContainer className="home-section" id="Career">
+    <CareerContainer className="home-section hidden" id="Career">
       <CareerHeading>Career</CareerHeading>
       <CareerWrapper>
         <CareerVerticalTimeline>
