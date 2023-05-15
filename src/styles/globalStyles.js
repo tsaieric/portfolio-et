@@ -42,7 +42,7 @@ html {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-20%);
-  transition: all 0.88s;
+  transition: transform 0.5s;
 }
 
 .show {
