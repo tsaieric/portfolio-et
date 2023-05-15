@@ -48,7 +48,7 @@ export default function Navbar({ toggle }) {
     );
     const sections = document.querySelectorAll(".home-section");
     sections.forEach((section) => {
-      observer.observe(section);
+      observer.current.observe(section);
     });
   }, []);
 
