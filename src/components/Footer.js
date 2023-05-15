@@ -9,10 +9,10 @@ export default function Footer() {
           Copyright &copy; {new Date().getFullYear()} erictsai.dev. All rights
           reserved.
           <br />I developed this website from scratch as a fun Gatsby+React
-          project, modeling partially after Jamstack architecture. I'm not a front-end focused engineer but wanted to get a feel
-          for React and make my own website vs. relying on Wordpress. I only used a few packages
-          for gatsby image optimization and for a vertical-timeline. Everything
-          else, I learned using a variety of sources listed below.
+          project, using Jamstack static architecture. I'm new to React and learned 
+          a bit to make my own website to avoid relying on Wordpress (what I had before). 
+          I only used a few packages for gatsby image optimization and the vertical-timeline. 
+          Everything else, I learned using a variety of sources listed below.
         </Copyright>
         <LinkContainer>
           <LinkItem>
@@ -50,7 +50,12 @@ export default function Footer() {
             <Link href="https://netacci.hashnode.dev/how-to-highlight-active-navigation-on-scroll-in-react">
               ScrollHighlighting
             </Link>
-          </LinkItem>{" "}
+          </LinkItem>
+          <LinkItem>
+            <Link href="https://www.youtube.com/watch?v=T33NN_pPeNI">
+              SimpleScrollAnimation
+            </Link>
+          </LinkItem>
         </LinkContainer>
       </div>
     </FooterContainer>
