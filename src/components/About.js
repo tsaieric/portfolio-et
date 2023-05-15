@@ -47,13 +47,11 @@ export default function About({ data }) {
 }
 
 const AboutContainer = styled.div`
-  background: transparent;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
-  position: relative;
-  margin-top: 0px;
 
   @media screen and (max-width: 768px) {
     padding: 30px 0;

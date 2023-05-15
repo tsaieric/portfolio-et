@@ -9,11 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   background: black; 
-  /* radial-gradient(
-    at top left,
-    rgb(50, 50, 50) 0%,
-    rgb(0, 0, 0) 100%
-  ); */
   background-repeat: no-repeat;
   
   //remove browser default css padding for navbar to work
@@ -41,8 +36,8 @@ html {
 .hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-20%);
-  transition: transform 0.5s;
+  transform: translateX(-30%);
+  transition: all 0.5s;
 }
 
 .show {

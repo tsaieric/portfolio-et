@@ -156,9 +156,9 @@ const ProjectTitle = styled.div`
   text-align: center;
   color: ${({ theme: { colors } }) => colors.tertiary};
   /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
-  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black,
-    -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black,
-    0.08em 0.08em black;
+  text-shadow: 0.06em 0 black, 0 0.06em black, -0.06em 0 black, 0 -0.06em black,
+    -0.06em -0.06em black, -0.06em 0.06em black, 0.06em -0.06em black,
+    0.06em 0.06em black;
 `;
 
 const ProjectStack = styled.div`
@@ -168,7 +168,7 @@ const ProjectStack = styled.div`
   text-align: center;
   color: ${({ theme: { colors } }) => colors.tertiary};
   /* text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; */
-  text-shadow: 0.08em 0 black, 0 0.08em black, -0.08em 0 black, 0 -0.08em black,
-    -0.08em -0.08em black, -0.08em 0.08em black, 0.08em -0.08em black,
-    0.08em 0.08em black;
+  text-shadow: 0.06em 0 black, 0 0.06em black, -0.06em 0 black, 0 -0.06em black,
+    -0.06em -0.06em black, -0.06em 0.06em black, 0.06em -0.06em black,
+    0.06em 0.06em black;
 `;

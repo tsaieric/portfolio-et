@@ -53,7 +53,7 @@ export default function Career() {
 }
 
 const CareerHeading = styled.div`
-  margin-top: 30px;
+  margin-top: 80px;
   color: ${({ theme: { colors } }) => colors.primary};
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
@@ -62,6 +62,7 @@ const CareerHeading = styled.div`
 `;
 
 const CareerContainer = styled.div`
+  margin-top: 5em;
   min-height: 100vh;
   padding: 5rem calc((100vw-1300px) / 2);
 
@@ -69,9 +70,9 @@ const CareerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   scroll-margin-top: 80px;
-  @media screen and (max-width: 768px) {
-    margin-top: 60px;
-  }
+  /* @media screen and (max-width: 768px) {
+    margin-top: 10em;
+  } */
 `;
 
 const CareerWrapper = styled.div`
@@ -81,7 +82,7 @@ const CareerWrapper = styled.div`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 24px;
+  padding: 0 clamp(0.7rem, 5vw, 6rem);
   justify-content: center;
 
   //Hides timeline line in order to create lines

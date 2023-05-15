@@ -18,40 +18,37 @@ export default function Navbar({ toggle }) {
 
   //active nav link based on active section
   const [activeSection, setActiveSection] = useState("");
-  const observer = useRef(null);
 
-  //useEffect for the above two comments
+  //observe when header sections intersects with viewport
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+      //Use intersection ratio to set nav highlight
+      //to avoid navlink highlight being toggled
+      //on off constantly when two elements intersect viewport
+      //equal threshold % amounts
+      if (entry.intersectionRatio >= 0.35) {
+        setActiveSection(entry.target.id);
+      }
+    },
+    {
+      root: null, //set viewport as intersection observer area
+      rootMargin: "-80px 0px 0px 0px", //top right bottom left
+      threshold: [0, 0.1, 0.35, 0.39, 0.5], //callback at % intersections
+    }
+  );
+  const sections = document.querySelectorAll(".home-section");
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
   useEffect(() => {
     //change navbar to black on scroll
     window.addEventListener("scroll", changeNav);
-
-    //observe when target intersects with root
-    observer.current = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        } 
-        entry.target.classList.toggle('show', entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "80px",
-        threshold: 0.2,
-      }
-    );
-
-    //Get all sections where classtype = home-section
-    const sections = document.querySelectorAll(".home-section");
-    sections.forEach((section) => {
-      observer.current.observe(section);
-    });
-
-    //Cleanup function to remove observer
-    return () => {
-      sections.forEach((section) => {
-        observer.current.unobserve(section);
-      });
-    };
   }, []);
 
   const data = useStaticQuery(graphql`
@@ -91,7 +88,7 @@ export default function Navbar({ toggle }) {
             <NavLink
               to={item.link}
               key={idx}
-              $isActive={activeSection === item.title}
+              $isActive={activeSection == item.title}
             >
               {item.title}
             </NavLink>
@@ -119,7 +116,7 @@ const Nav = styled.nav`
     transition: 0.8s all ease;
   }
   //make navbar sticky
-  position: sticky; //relative if don't want
+  position: sticky; //relative if don't want sticky
   position: -webkit-sticky; /* Safari */
   top: 0;
 `;
@@ -179,6 +176,7 @@ const NavLink = styled(Link)`
       cursor: pointer;
       transform: translateY(-2px);
       transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+      color: ${({ theme: { colors } }) => colors.secondary};
     }
   }
 `;
