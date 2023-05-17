@@ -24,32 +24,39 @@ export default function Navbar({ toggle }) {
     //change navbar to black on scroll
     window.addEventListener("scroll", changeNav);
 
-    //observe when header sections intersects with viewport
+    //observe when header sections intersect with viewport
     observer.current = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
-        }
-        //Use intersection ratio to set nav highlight
-        //to avoid navlink highlight being toggled
-        //on off constantly when two elements intersect viewport
-        //equal threshold % amounts
-        if (entry.intersectionRatio >= 0.35) {
-          setActiveSection(entry.target.id);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+          //Use intersection ratio to set nav highlight
+          //to avoid navlink highlight being toggled
+          //on off constantly when two elements intersect viewport
+          //equal threshold % amounts
+          if (entry.intersectionRatio >= 0.25) {
+            setActiveSection(entry.target.id);
+          }
+        });
       },
       {
         root: null, //set viewport as intersection observer area
-        rootMargin: "-80px 0px 0px 0px", //top right bottom left
-        threshold: [0, 0.1, 0.35, 0.39, 0.5], //callback at % intersections
+        rootMargin: "-80px 0px -30% 0px", //top right bottom left
+        threshold: [0, 0.25, 0.26, 0.3, 0.5], //callback at % intersections
       }
     );
     const sections = document.querySelectorAll(".home-section");
     sections.forEach((section) => {
       observer.current.observe(section);
     });
+
+    //Cleanup function to unobserve sections
+    return () => {
+      observer.current.disconnect();
+    };
   }, []);
 
   const data = useStaticQuery(graphql`
