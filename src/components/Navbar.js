@@ -67,7 +67,6 @@ export default function Navbar({ toggle }) {
             title
             link
           }
-          title
         }
       }
       mainLogoImg: file(relativePath: { eq: "images/logo/logoSquare180.png" }) {
