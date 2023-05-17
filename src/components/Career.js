@@ -14,7 +14,7 @@ export default function Career() {
     <CareerContainer className="home-section hidden" id="Career">
       <CareerHeading>Career</CareerHeading>
       <CareerWrapper>
-        <CareerVerticalTimeline>
+        <CareerVerticalTimeline animate={false}>
           {careerElements.map((element) => {
             let isWorkIcon = element.icon === "work";
             return (
