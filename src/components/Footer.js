@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function Footer() {
   return (
     <FooterContainer>
-      <div>
+      {/* <div> */}
         <Copyright>
           Copyright &copy; {new Date().getFullYear()} erictsai.dev. All rights
           reserved.
@@ -57,7 +57,7 @@ export default function Footer() {
             </Link>
           </LinkItem>
         </LinkContainer>
-      </div>
+      {/* </div> */}
     </FooterContainer>
   );
 }
@@ -66,6 +66,7 @@ const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: ${({ theme: { colors } }) => colors.tertiary};
   padding: 30px;
 `;
