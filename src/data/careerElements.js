@@ -4,8 +4,8 @@ let careerElements = [
     title: "Google Stadia/Youtube",
     subtitle: "Software Engineer (Java, C++, Dart)",
     list: [
-      "Reduced Youtube Shorts spam-abuse by developing pipeline to index risk identified by ML/TensorFlow models.",
-      "Worked on Stadia features to improve discoverability like adding emoji reactions.",
+      "Reduced re-upload spam impacting 1M+ YouTube Shorts by developing a pipeline to index video risk signals identified by TensorFlow and ML models.",
+      "Designed & implemented a Stadia recommendation system to auto-suggest free games based on trending games, user preferences, user history, and region.",
     ],
     date: "August 2020 - March 2023",
     icon: "work",
@@ -16,8 +16,8 @@ let careerElements = [
     title: "Amazon",
     subtitle: "Software Development Engineer (Java, C++)",
     list: [
-      "Developed for the Alexa Auto SDK to help customers integrate Alexa into vehicle head units.",
-      "Implemented Java, C++ modules that allow OEM partners to capture latency + vehicle metadata from the Alexa Auto SDK and upload to Amazon CloudWatch, Amazon EMR, etc.",
+      "Added telemetry features for the Alexa Auto SDK which integrates Alexa into vehicles.",
+      "Implemented Java & C++ modules that allow OEM partners to capture latency & vehicle metadata from the Alexa Auto SDK and upload to Amazon CloudWatch, Amazon EMR, etc.",
     ],
     date: "April 2018 - January 2020",
     icon: "work",
@@ -28,8 +28,8 @@ let careerElements = [
     title: "GE Digital",
     subtitle: "Software Engineer (Java)",
     list: [
-      "Developed a Spring framework for data scientists to run analytics on the industrial Internet of Things (IoT) through the Predix platform.",
-      "Created a runtime library to deploy analytics from the cloud to thousands of off-site assets.",
+      "Developed a framework for data scientists to run analytics on the industrial Internet of Things.",
+      "Created a runtime library to deploy analytics from the cloud to 30,000+ off-site assets.",
     ],
     date: "September 2016 - March 2018",
     icon: "work",
