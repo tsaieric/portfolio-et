@@ -7,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+a {
+  color: ${({ theme: { colors } }) => colors.primary};
+}
+
 body {
   background: black; 
   background-repeat: no-repeat;
