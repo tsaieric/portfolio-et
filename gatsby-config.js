@@ -14,6 +14,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
+    "gatsby-plugin-mdx-embed",
     "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-react-svg",

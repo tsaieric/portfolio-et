@@ -2,31 +2,53 @@
 title: Autonomous A* Pathfinding
 stack: C#, Unity
 link: game-ai
-order: 6
+order: 3
 img: "../../assets/images/featured/aStarCover.png"
 category: project
 ---
 
-### Game AI
+I wrote a Unity project that demonstrates A* pathfinding and steering behaviors. 
+I enjoyed working on these functionalities because they are simple yet powerful. I've embedded 2 videos & described my work below:
 
-Here’s a Unity project I wrote with two classmates for a Game Programming AI class. The project demonstrates A* pathfinding and steering behaviors. I had a great time working on these functionalities because they’re simple yet powerful. Below are two descriptions and videos of some of the work.
-A* https://youtu.be/HysjDYTByBQ 
-This video below shows A* pathfinding using grids. In the scene, ten zombies are all using A* to find paths to the player. To reduce lag and improve runtime, I:
-1.	Spread the processing of each zombie into separate frames
-2.	Utilized our own Priority Queue class to better handle the retrieving of the Node with the lowest F-cost
-3.	Used HashMaps/Dictionary classes to reduce the cost of checking if a node was contained in open or closed sets
-4.	Only recalculate paths if the target has moved to a new node or location
-I find it exciting to be able to see the feedback of each zombie path changing as the main player moves around various obstacles.
-You can check out the code @ https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding.
-Be sure to look at Pathfinding.cs for the A* Algorithm.
+<br/>
 
-Autonomous movement: https://youtu.be/sGFoUicI2XY  
-The next video is about creating autonomous behavior by calculating steering forces. Steering is about calculating the force required to achieve a desired movement behavior for AI characters. All movement is handled through our own calculations of acceleration, velocity and position. Unity’s collision detection is also turned off to best show obstacle avoidance. I helped implement many behaviors such as:
-1.	Seeking a target
+### A* Pathfinding
+This video above shows A* pathfinding using a grid setup in Unity. In the scene, ten zombies are all simultaenously using A* to constantly calculate their paths to the player. 
+
+<YouTube youTubeId="HysjDYTByBQ" />
+
+To reduce lag and improve runtime, I:
+1.	Spread the processing of each zombie into separate frames to avoid lag from computing all paths on 1 frame 
+2.	Utilized my own Priority Queue class to better handle the retrieving of the Node with the lowest F-cost
+3.	Used HashMaps to reduce the cost of checking if a node was contained in open or closed sets
+4.	Only recalculated paths if the target moved to a new node or location
+
+I found it exciting to be able to see the paths of each zombie change as the player moved around various obstacles!  
+
+Implementation @ my <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding" target="_blank">Github Pathfinding Folder</a>.  
+
+Be sure to look at <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding/Pathfinding.cs" target="_blank">Pathfinding.cs</a> for the A* Algorithm.  
+
+<br/>
+
+### Autonomous movement 
+
+This video shows autonomous behavior through calculation of steering forces. 
+Steering is done by calculating the force required to achieve a desired movement behavior for any AI character.  
+
+All movement was handled through calculations of acceleration, velocity and position. 
+Unity’s collision detection was also turned off to prove the AI is calculating obstacle avoidance vs. relying on the physics engine. 
+
+<YouTube youTubeId="sGFoUicI2XY" />
+
+I implemented many behaviors such as:
+1.	Seeking towards a target
 2.	Fleeing from a target
-3.	Wandering
+3.	Wandering randomly
 4.	Avoiding Obstacles
-Below you can see this project’s implementation of Wandering along with Obstacle Avoidance.
-You can check out the code @ https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/BasicMovement.
-Look at the MoveController.cs for the behaviors mentioned.
-Look at the Flocking Anchor.cs to see algorithms for shape-based flocking.
+
+Implementation @ my <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/BasicMovement" target="_blank">Github BasicMovement Script</a>.  
+
+Look at the <a href="https://github.com/tsaieric/BasicMovement/blob/master/Assets/Scripts/BasicMovement/MoveController.cs" target="_blank">MoveController.cs</a> for the behaviors mentioned.  
+
+Look at the <a href="https://github.com/tsaieric/BasicMovement/blob/master/Assets/Scripts/BasicMovement/FlockingAnchor.cs" target="_blank">Flocking Anchor.cs</a> to see algorithms for shape-based flocking.  

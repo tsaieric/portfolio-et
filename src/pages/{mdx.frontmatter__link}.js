@@ -10,12 +10,12 @@ export default function ProjectPost({ data, children }) {
       <ProjectContainer>
         <ProjectHeading>{data.mdx.frontmatter.title}</ProjectHeading>
         <ProjectSubheading>{data.mdx.frontmatter.stack}</ProjectSubheading>
-        <ProjectGatsbyImage
+        {/* <ProjectGatsbyImage
           image={getImage(
             data.mdx.frontmatter.img.childImageSharp.gatsbyImageData
           )}
           alt={data.mdx.frontmatter.title}
-        />
+        /> */}
         <TextWrapper>{children}</TextWrapper>
       </ProjectContainer>
     </Layout>

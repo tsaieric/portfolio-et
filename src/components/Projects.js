@@ -137,7 +137,7 @@ const ProjectInfo = styled.div`
 
 const TitleWrap = styled.div`
   position: absolute;
-  top: 80%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
@@ -150,7 +150,7 @@ const StackWrap = styled.div`
 `;
 
 const ProjectTitle = styled.div`
-  font-weight: 400;
+  font-weight: 800;
   font-size: clamp(1rem, 5vw, 2rem);
   line-height: clamp(1rem, 5vw, 2rem);
   text-align: center;
