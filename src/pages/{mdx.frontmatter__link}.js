@@ -63,12 +63,15 @@ const ProjectSubheading = styled.div`
 `;
 const TextWrapper = styled.div`
   max-width: 1000px;
-  padding-top: 0;
+  padding-top: 24px;
   padding-bottom: 30px;
   padding-left: 24px;
   padding-right: 24px;
   color: ${({ theme: { colors } }) => colors.tertiary};
 
+  h4 {
+    color: ${({ theme: { colors } }) => colors.primary};
+  }
   h1,
   h2,
   h3 {

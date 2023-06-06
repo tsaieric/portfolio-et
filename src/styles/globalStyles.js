@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 a {
-  color: ${({ theme: { colors } }) => colors.primary};
+  color: ${({ theme: { colors } }) => colors.secondary};
 }
 
 body {
