@@ -9,11 +9,12 @@ export default function Footer() {
         Copyright &copy; {new Date().getFullYear()} erictsai.dev. All rights
         reserved.
         <br />I developed this fully-responsive website from scratch utilizing
-        Jamstack architecture w/ React & Gatsby as a fun project. I'm new to
-        React and learned it to improve efficiency of my portfolio, remaking it to
-        avoid relying on large third-party platforms like WordPress. I only used
-        a few packages for gatsby image optimization and the vertical-timeline.
-        Everything else, I learned using a variety of sources listed below.
+        Jamstack architecture w/ React & Gatsby as a fun project. I learned &
+        implemented basic React to improve efficiency of my portfolio, remaking
+        it to avoid relying on large third-party platforms like WordPress. I
+        only used 2 packages: Gatsby image optimization and the
+        Vertical-timeline. Everything else, I learned using a variety of sources
+        listed below.
       </Copyright>
       <LinkContainer>
         <LinkItem>
