@@ -58,8 +58,8 @@ html {
 		scroll-behavior: auto;
 	}
 
-  .hidden {
+  /* .hidden {
     transition: none;
-  }
+  } */
 }
 `;
