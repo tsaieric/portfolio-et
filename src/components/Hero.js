@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import VideoMp4 from "../assets/videos/techspin1080p.mp4";
 import VideoWebm from "../assets/videos/techspin1080p.webm";
 
-class MutedVideo extends HTMLVideoElement {
-  constructor() {
-    super();
-    this.muted = true;
-  }
-}
-
-customElements.define("z-muted", MutedVideo, { extends: "video" });
-
 export default function Hero() {
+  const videoRef = useRef(null);
+  useEffect(() => {
+    // autoplay does not work on some browsers if video does not have `muted`
+    // attribute:
+    // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-autoplay
+    // and react ignores muted attribute:
+    // https://github.com/facebook/react/issues/10389
+  
+    if (videoRef.current) {
+        videoRef.current.setAttribute('muted', '');
+    }
+  });
+
   return (
     <HeroContainer className="home-section hidden" id="Hero">
       <HeroBg>
-        <VideoBg autoPlay={true} loop={true} controls={false} is="z-muted" playsInline webkit-playsinline={true}>
+        <VideoBg ref={videoRef} autoPlay={true} loop={true} controls={false} playsInline webkit-playsinline={true} muted={true}>
           <source src={VideoMp4} type="video/mp4" />
           <source src={VideoWebm} type="video/webm" />
         </VideoBg>
