@@ -3,11 +3,20 @@ import styled from "styled-components";
 import VideoMp4 from "../assets/videos/techspin1080p.mp4";
 import VideoWebm from "../assets/videos/techspin1080p.webm";
 
+class MutedVideo extends HTMLVideoElement {
+  constructor() {
+    super();
+    this.muted = true;
+  }
+}
+
+customElements.define("z-muted", MutedVideo, { extends: "video" });
+
 export default function Hero() {
   return (
     <HeroContainer className="home-section hidden" id="Hero">
       <HeroBg>
-        <VideoBg autoPlay={true} loop={true} controls={false} muted playsInline>
+        <VideoBg autoPlay={true} loop={true} controls={false} is="z-muted" playsInline>
           <source src={VideoMp4} type="video/mp4" />
           <source src={VideoWebm} type="video/webm" />
         </VideoBg>
