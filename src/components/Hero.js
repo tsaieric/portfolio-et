@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <HeroContainer className="home-section hidden" id="Hero">
       <HeroBg>
-        <VideoBg autoPlay loop muted playsInLine>
+        <VideoBg playsInLine autoPlay loop muted webkit-playsinline={true}>
           <source src={VideoMp4} type="video/mp4" />
           <source src={VideoWebm} type="video/webm" />
         </VideoBg>
