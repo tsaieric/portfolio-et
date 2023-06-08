@@ -9,7 +9,7 @@ export default function ProjectPost({ data, children }) {
   useLayoutEffect(() => {
     // Firefox 1.0+
     var isFirefox = typeof InstallTrigger !== "undefined";
-    // Manually auto-scroll if it is firefox browser due to 
+    // Manually auto-scroll if it is firefox browser due to
     // issues with smooth scroll redirect to top in firefox
     if (isFirefox) {
       document.body.scrollTo({
@@ -68,6 +68,8 @@ const ProjectHeading = styled.div`
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   text-align: center;
   margin-bottom: 0.2rem;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
 const ProjectSubheading = styled.div`
   color: ${({ theme: { colors } }) => colors.secondary};
@@ -75,6 +77,8 @@ const ProjectSubheading = styled.div`
   font-size: clamp(0.8rem, 5vw, 1.5rem);
   text-align: center;
   margin-bottom: 0.2rem;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
 const TextWrapper = styled.div`
   max-width: 1000px;
