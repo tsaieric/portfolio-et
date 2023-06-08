@@ -6,16 +6,27 @@ order: 3
 img: "../../assets/images/featured/aStarCover.png"
 category: project
 ---
+#### Summary:
 
-I wrote a Unity project that demonstrates A* pathfinding and steering behaviors. 
-I enjoyed working on these functionalities because they are simple yet powerful. I've embedded 2 videos & described my work below:
+I wrote a Unity project to practice what I learned in Game AI and demonstrate A* pathfinding with steering behaviors.  
+
+I enjoyed working on both A* pathfinding and creating autonomous movement through steering because they are relatively simple yet powerful when combined. 
+
+I've embedded 2 videos & described the implementations below.
+
+#### Scope:
+
+Personal Project | C#, Unity
 
 <br/>
 
 ### A* Pathfinding
-This video above shows A* pathfinding using a grid setup in Unity. In the scene, ten zombies are all simultaenously using A* to constantly calculate their paths to the player. 
+I implemented A* pathfinding using a grid setup in Unity. 
+In the video scene, ten zombies are simultaenously using A* to constantly calculate their paths to the player as the player runs around. 
 
 <YouTube youTubeId="HysjDYTByBQ" />
+
+#### My Contributions: 
 
 To reduce lag and improve runtime, I:
 1.	Spread the processing of each zombie into separate frames to avoid lag from computing all paths on 1 frame 
@@ -23,23 +34,27 @@ To reduce lag and improve runtime, I:
 3.	Used HashMaps to reduce the cost of checking if a node was contained in open or closed sets
 4.	Only recalculated paths if the target moved to a new node or location
 
+#### Results: 
+
 I found it exciting to be able to see the paths of each zombie change as the player moved around various obstacles!  
 
-Implementation @ my <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding" target="_blank">Github Pathfinding Folder</a>.  
+Implementation is @ my <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding" target="_blank">Github Pathfinding Folder</a>.  
 
-Be sure to look at <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding/Pathfinding.cs" target="_blank">Pathfinding.cs</a> for the A* Algorithm.  
+Look at <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/Pathfinding/Pathfinding.cs" target="_blank">Pathfinding.cs</a> for the A* Algorithm.  
 
 <br/>
 
 ### Autonomous movement 
 
-This video shows autonomous behavior through calculation of steering forces. 
+I implemented autonomous behaviors through calculation of steering forces. 
 Steering is done by calculating the force required to achieve a desired movement behavior for any AI character.  
 
 All movement was handled through calculations of acceleration, velocity and position. 
 Unity’s collision detection was also turned off to prove the AI is calculating obstacle avoidance vs. relying on the physics engine. 
 
 <YouTube youTubeId="sGFoUicI2XY" />
+
+#### My Contributions: 
 
 I implemented many behaviors such as:
 1. Crowd flocking to form a triangle, circle, square or V shape
@@ -48,7 +63,15 @@ I implemented many behaviors such as:
 4. Wandering randomly
 5. Avoiding obstacles
 
-Implementation @ my <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/BasicMovement" target="_blank">Github BasicMovement Script</a>.  
+#### Results: 
+
+Implementing autonomous movement allowed me to create zombies with much more realistic movements.  
+
+By "pushing" zombies, their movement is more fluid than if they were being programmed to directly go to XYZ point.  
+
+This can be seen in the A* Pathfinding video which combines autonomous movement with A* pathfinding guidance. 
+
+Implementation is @ my <a href="https://github.com/tsaieric/BasicMovement/tree/master/Assets/Scripts/BasicMovement" target="_blank">Github BasicMovement Script</a>.  
 
 Look at the <a href="https://github.com/tsaieric/BasicMovement/blob/master/Assets/Scripts/BasicMovement/MoveController.cs" target="_blank">MoveController.cs</a> for the behaviors mentioned.  
 
