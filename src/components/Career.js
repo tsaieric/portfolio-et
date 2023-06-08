@@ -11,7 +11,7 @@ import careerElements from "../data/careerElements";
 
 export default function Career() {
   return (
-    <CareerContainer className="home-section hidden" id="Career">
+    <CareerContainer className="home-section hidden" id="career">
       <CareerHeading>Career</CareerHeading>
       <CareerWrapper>
         <CareerVerticalTimeline animate={false}>
@@ -70,9 +70,9 @@ const CareerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   scroll-margin-top: 80px;
-  /* @media screen and (max-width: 768px) {
-    margin-top: 10em;
-  } */
+  @media screen and (max-width: 1170px) {
+    margin-bot: 10em;
+  }
 `;
 
 const CareerWrapper = styled.div`

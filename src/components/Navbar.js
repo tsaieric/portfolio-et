@@ -96,7 +96,7 @@ export default function Navbar({ toggle }) {
             <NavLink
               to={item.link}
               key={idx}
-              $isActive={activeSection === item.title}
+              $isActive={equalsIgnoringCase(activeSection, item.title)}
             >
               {item.title}
             </NavLink>
@@ -110,6 +110,10 @@ export default function Navbar({ toggle }) {
       </NavbarContainer>
     </Nav>
   );
+}
+
+function equalsIgnoringCase(text, other) {
+  return text.localeCompare(other, undefined, { sensitivity: 'base' }) === 0;
 }
 
 const Nav = styled.nav`

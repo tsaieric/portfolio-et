@@ -36,12 +36,13 @@ html {
     margin-right: calc(-1 * (100vw - 100%));
   }
 }
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-30%);
-  transition: all 0.5s;
+@media (prefers-reduced-motion: no-preference) {
+  .hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-30%);
+    transition: all 0.5s;
+  }
 }
 
 .show {
@@ -57,9 +58,5 @@ html {
 	html {
 		scroll-behavior: auto;
 	}
-
-  /* .hidden {
-    transition: none;
-  } */
 }
 `;

@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 export default function About({ data }) {
   const portraitImg = getImage(data.gatsbyImageData);
   return (
-    <AboutContainer className="home-section hidden" id="About">
+    <AboutContainer className="home-section hidden" id="about">
       <AboutWrapper>
         <AboutItems imgStart={false}>
           <Column1>

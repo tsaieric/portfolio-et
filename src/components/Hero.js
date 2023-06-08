@@ -18,7 +18,7 @@ export default function Hero() {
   });
 
   return (
-    <HeroContainer className="home-section hidden" id="Hero">
+    <HeroContainer className="home-section hidden" id="hero">
       <HeroBg>
         <VideoBg
           ref={videoRef}
