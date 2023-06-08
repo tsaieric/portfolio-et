@@ -39,6 +39,7 @@ export default function Navbar({ toggle }) {
           //equal threshold % amounts
           if (entry.intersectionRatio >= 0.25) {
             setActiveSection(entry.target.id);
+            window.history.replaceState({}, "", "/#" + entry.target.id);
           }
         });
       },
