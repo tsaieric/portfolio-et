@@ -41,7 +41,7 @@ html {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-30%);
-    transition: all 0.5s;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, filter 0.5s ease-in-out;
   }
 }
 
