@@ -6,15 +6,18 @@ import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function ProjectPost({ data, children }) {
-  // useEffect(
-  //   () =>
-  //     // setTimeout(function () {
-  //       window.scrollTo(0, 0),
-  //     // }, 1),
-  //   []
-  // );
   useLayoutEffect(() => {
-    document.body.scrollTo(0, 0);
+    // Firefox 1.0+
+    var isFirefox = typeof InstallTrigger !== "undefined";
+    // Manually auto-scroll if it is firefox browser due to 
+    // issues with smooth scroll redirect to top in firefox
+    if (isFirefox) {
+      document.body.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto",
+      });
+    }
   }, []);
 
   return (

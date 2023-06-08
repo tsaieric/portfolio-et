@@ -7,7 +7,17 @@ import PDF from "../assets/eric-tsai-resume.pdf";
 
 export default function Resume({ data }) {
   useLayoutEffect(() => {
-    document.body.scrollTo(0, 0);
+    // Firefox 1.0+
+    var isFirefox = typeof InstallTrigger !== "undefined";
+    // Manually auto-scroll if it is firefox browser due to 
+    // issues with smooth scroll redirect to top in firefox
+    if (isFirefox) {
+      document.body.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto",
+      });
+    }
   }, []);
 
   const resumeImage = getImage(data.file.childImageSharp.gatsbyImageData);
