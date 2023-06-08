@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -6,6 +6,10 @@ import { graphql } from "gatsby";
 import PDF from "../assets/eric-tsai-resume.pdf";
 
 export default function Resume({ data }) {
+  useLayoutEffect(() => {
+    document.body.scrollTo(0, 0);
+  }, []);
+
   const resumeImage = getImage(data.file.childImageSharp.gatsbyImageData);
 
   return (

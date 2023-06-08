@@ -11,16 +11,24 @@ export default function Hero() {
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-autoplay
     // and react ignores muted attribute:
     // https://github.com/facebook/react/issues/10389
-  
-    if (videoRef.current) {
-        videoRef.current.setAttribute('muted', '');
+
+    if (videoRef.current.muted) {
+      videoRef.current.setAttribute("muted", '');
     }
   });
 
   return (
     <HeroContainer className="home-section hidden" id="Hero">
       <HeroBg>
-        <VideoBg ref={videoRef} autoPlay={true} loop={true} controls={false} playsInline webkit-playsinline={true} muted={true}>
+        <VideoBg
+          ref={videoRef}
+          autoPlay={true}
+          loop={true}
+          controls={false}
+          playsInline={true}
+          webkit-playsinline={true}
+          muted={true}
+        >
           <source src={VideoMp4} type="video/mp4" />
           <source src={VideoWebm} type="video/webm" />
         </VideoBg>

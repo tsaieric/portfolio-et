@@ -86,7 +86,7 @@ export default function Navbar({ toggle }) {
       <NavbarContainer>
         <NavLogo to="/">
           <div>
-            <NavGatsbyImage image={mainLogoImg} alt="ETLogo" />
+            <NavGatsbyImage image={mainLogoImg} alt="ET" />
           </div>
         </NavLogo>
         <Bars onClick={toggle} />

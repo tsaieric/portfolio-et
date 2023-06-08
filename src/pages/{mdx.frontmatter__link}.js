@@ -1,10 +1,22 @@
-import * as React from "react";
+// import * as React from "react";
+import React, { useLayoutEffect } from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function ProjectPost({ data, children }) {
+  // useEffect(
+  //   () =>
+  //     // setTimeout(function () {
+  //       window.scrollTo(0, 0),
+  //     // }, 1),
+  //   []
+  // );
+  useLayoutEffect(() => {
+    document.body.scrollTo(0, 0);
+  }, []);
+
   return (
     <Layout>
       <ProjectContainer>
