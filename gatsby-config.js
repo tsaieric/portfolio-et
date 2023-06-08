@@ -45,10 +45,10 @@ module.exports = {
   ],
   siteMetadata: {
     menuData: [
-      { title: "About", link: "/#About" },
-      { title: "Projects", link: "/#Projects" },
-      { title: "Career", link: "/#Career" },
-      { title: "Contact", link: "/#Contact" },
+      { title: "About", link: "/#about" },
+      { title: "Projects", link: "/#projects" },
+      { title: "Career", link: "/#career" },
+      { title: "Contact", link: "/#contact" },
     ],
   },
 };
