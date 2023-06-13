@@ -26,7 +26,6 @@ export default function Hero() {
           loop={true}
           controls={false}
           playsInline={true}
-          webkit-playsinline={true}
           muted={true}
         >
           <source src={VideoMp4} type="video/mp4" />
