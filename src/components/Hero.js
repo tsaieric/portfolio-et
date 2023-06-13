@@ -12,9 +12,17 @@ export default function Hero() {
     // and react ignores muted attribute:
     // https://github.com/facebook/react/issues/10389
 
-      videoRef.current.setAttribute("muted", '');
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted  = true;
+    // videoRef.current.setAttribute("muted", '');
+    // videoRef.current.defaultMuted = true;
+    // videoRef.current.muted  = true;
+
+    videoRef &&
+      videoRef.current
+        .play()
+        .then(() => {})
+        .catch((err) => {
+          // Video couldn't play, low power play button showing.
+        });
   });
 
   return (
@@ -22,7 +30,7 @@ export default function Hero() {
       <HeroBg>
         <VideoBg
           ref={videoRef}
-          autoPlay={true}
+          // autoPlay={true}
           loop={true}
           controls={false}
           playsInline={true}
