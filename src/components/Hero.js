@@ -12,9 +12,9 @@ export default function Hero() {
     // and react ignores muted attribute:
     // https://github.com/facebook/react/issues/10389
 
-    if (videoRef.current.muted) {
       videoRef.current.setAttribute("muted", '');
-    }
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted  = true;
   });
 
   return (
